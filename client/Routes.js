@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { me } from './store';
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
+import AdminHome from './components/AdminHome';
 import About from './components/About';
-import { me } from './store';
+import AllPatterns from './components/AllPatterns';
 
 /**
  * COMPONENT
@@ -21,15 +23,16 @@ class Routes extends Component {
       <div>
         {isLoggedIn ? (
           <Switch>
-            <Route path="/home" component={Home} />
+            <Route path="/admin" component={AdminHome} />
             <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
-            <Route path="/" exact component={Login} />
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/patterns" component={AllPatterns} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/about" component={About} />
           </Switch>
         )}
       </div>
