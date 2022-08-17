@@ -14,33 +14,50 @@ async function seed() {
   console.log('db synced!');
 
   // Users
-  const users = await Promise.all([
-    User.create({ username: 'k', password: 'k' }),
-  ]);
+  const users = [
+    { username: 'a', password: 'a', isAdmin: true },
+    { username: 'u', password: 'u' },
+  ];
+  const [admin, user] = await Promise.all(
+    users.map((user) => User.create(user))
+  );
 
   // Patterns
-  const patterns = await Promise.all([
-    Pattern.create({
+  const patterns = [
+    {
       title: 'Gingham Tote Bag',
-      creator: 'HayHay Crochet',
+      creator: 'Heather • HayHay Crochet',
       description:
-        "A gingham tote bag, perfect for beginners. One you'll need to make in every color.",
+        "A gingham tote bag, perfect for beginners to intermediate beginners. Once you learn how to color change, you'll need to make this in every color.",
       link: 'https://hayhaycrochet.com/crochet-patterns/accessories/crochet-gingham-tote-bag/',
       image:
         'https://hayhaycrochet.com/wp-content/uploads/2021/10/IMG_7066_jpg.jpg',
       price: 0,
-    }),
-    Pattern.create({
+    },
+    {
       title: 'Green Gingham Baby Blanket',
-      creator: 'Daisy Farm Crafts',
+      creator: 'Tiffany & Hannah • Daisy Farm Crafts',
       description:
-        "A gingham tote bag, perfect for beginners. One you'll need to make in every color.",
+        "A gender neutral baby blanket for beginners to intermediate beginners. Color changing is required, but with the help of the in-depth video, you'll pick it up fast.",
       link: 'https://daisyfarmcrafts.com/crochet-green-gingham-blanket/',
       image:
         'https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1520/https://daisyfarmcrafts.com/wp-content/uploads/2019/12/fullsizeoutput_3dde.jpeg',
       price: 0,
-    }),
-  ]);
+    },
+    {
+      title: 'Juliette Corset',
+      creator: 'An Vo • IWillCrochet',
+      description:
+        'The Juliette Corset is suitable for intermediate beginner crocheters. This design uses aran-weight yarn and the combination of two basic crochet stitches: half double crochet and slip stitch to create the perfect cottage-core aesthetic.',
+      link: 'https://www.etsy.com/listing/1167819054/juliette-corset-crochet-cottagecore',
+      image:
+        'https://i.etsystatic.com/28015370/r/il/24f8ac/3727045219/il_794xN.3727045219_mri4.jpg',
+      price: 796,
+    },
+  ];
+  const createdPatterns = await Promise.all(
+    patterns.map((pattern) => Pattern.create(pattern))
+  );
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded ${patterns.length} patterns`);
