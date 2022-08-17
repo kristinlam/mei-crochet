@@ -25,7 +25,7 @@ async function seed() {
   // Patterns
   const patterns = [
     {
-      title: 'Gingham Tote Bag',
+      name: 'Gingham Tote Bag',
       creator: 'Heather • HayHay Crochet',
       description:
         "A gingham tote bag, perfect for beginners to intermediate beginners. Once you learn how to color change, you'll need to make this in every color.",
@@ -35,7 +35,7 @@ async function seed() {
       price: 0,
     },
     {
-      title: 'Green Gingham Baby Blanket',
+      name: 'Green Gingham Baby Blanket',
       creator: 'Tiffany & Hannah • Daisy Farm Crafts',
       description:
         "A gender neutral baby blanket for beginners to intermediate beginners. Color changing is required, but with the help of the in-depth video, you'll pick it up fast.",
@@ -45,7 +45,7 @@ async function seed() {
       price: 0,
     },
     {
-      title: 'Juliette Corset',
+      name: 'Juliette Corset',
       creator: 'An Vo • IWillCrochet',
       description:
         'The Juliette Corset is suitable for intermediate beginner crocheters. This design uses aran-weight yarn and the combination of two basic crochet stitches: half double crochet and slip stitch to create the perfect cottage-core aesthetic.',

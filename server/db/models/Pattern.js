@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../db');
 
 const Pattern = db.define('pattern', {
-  title: {
+  name: {
     type: Sequelize.STRING,
     unique: true,
     allowNull: false,
