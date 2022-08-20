@@ -10,6 +10,8 @@ export const AdminHome = (props) => {
   return (
     <div>
       <h3>Welcome, {username}</h3>
+      <p>View all users</p>
+      <p>Manage patterns</p>
     </div>
   );
 };

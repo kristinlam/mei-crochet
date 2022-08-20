@@ -4,7 +4,7 @@ import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { me } from './store';
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import AdminHome from './components/AdminHome';
+import AdminHome from './components/admin/AdminHome';
 import About from './components/About';
 import AllPatterns from './components/AllPatterns';
 
