@@ -1,12 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { me } from './store';
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import AdminHome from './components/admin/AdminHome';
 import About from './components/About';
 import AllPatterns from './components/AllPatterns';
+import AdminHome from './components/admin/AdminHome';
+import AllUsers from './components/admin/AllUsers';
 
 /**
  * COMPONENT
@@ -21,9 +22,10 @@ class Routes extends Component {
 
     return (
       <div>
-        {isLoggedIn ? (
+        {/* {isLoggedIn ? (
           <Switch>
             <Route path="/admin" component={AdminHome} />
+            <Route path="/admin/users" component={AllUsers} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -34,7 +36,16 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
           </Switch>
-        )}
+        )} */}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/patterns" component={AllPatterns} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route exact path="/admin" component={AdminHome} />
+          <Route path="/admin/users" component={AllUsers} />
+        </Switch>
       </div>
     );
   }

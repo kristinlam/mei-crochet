@@ -1,24 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-/**
- * COMPONENT
- */
-export const AdminHome = (props) => {
+const AdminHome = (props) => {
   const { username } = props;
 
   return (
     <div>
       <h3>Welcome, {username}</h3>
-      <p>View all users</p>
-      <p>Manage patterns</p>
+      <Link to="/admin/users">Users</Link>
+      <Link to="/admin/patterns">Patterns</Link>
     </div>
   );
 };
 
-/**
- * CONTAINER
- */
 const mapState = (state) => {
   return {
     username: state.auth.username,
