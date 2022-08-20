@@ -18,10 +18,12 @@ const AllPatterns = () => {
         {patterns.map((pattern) => (
           <div>
             <h2>{pattern.name}</h2>
-            <img
-              style={{ width: '20rem', height: 'auto' }}
-              src={pattern.image}
-            />
+            <div style={{ width: '20rem', height: '20rem' }}>
+              <img
+                src={pattern.image}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
             <p>{pattern.creator}</p>
             <p>{pattern.price}</p>
           </div>
