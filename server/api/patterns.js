@@ -2,7 +2,6 @@ const router = require('express').Router();
 const {
   models: { Pattern },
 } = require('../db');
-const { requireToken, isAdmin } = require('./middleware');
 
 module.exports = router;
 
