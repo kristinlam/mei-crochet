@@ -13,7 +13,7 @@ const requireToken = async (req, res, next) => {
 };
 
 const isAdmin = async (req, res, next) => {
-  if (!req.user.admin) {
+  if (!req.user.isAdmin) {
     return res.status(403).send("You don't have permission to view this page.");
   } else {
     next();
