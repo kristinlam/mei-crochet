@@ -8,12 +8,11 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
     {isLoggedIn ? (
       <div className="bg-beige flex flex-row items-center justify-between">
         <div className="flex-1">
-          <Link to="/home">Home</Link>
           <Link to="/admin">Admin Dashboard</Link>
         </div>
 
         <div className="flex-1 text-center">
-          <h1 className="">Mei Crochet</h1>
+          <Link to="/">Mei Crochet</Link>
         </div>
         <div className="flex-1 text-right">
           <a href="#" onClick={handleClick}>
@@ -24,12 +23,11 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
     ) : (
       <div className="bg-beige flex flex-row items-center justify-between">
         <div className="flex-1">
-          <Link to="/">Home</Link>
           <Link to="/patterns">Patterns</Link>
           <Link to="/about">About</Link>
         </div>
         <div className="flex-1 text-center">
-          <h1 className="">Mei Crochet</h1>
+          <Link to="/">Mei Crochet</Link>
         </div>
         <div className="flex-1 text-right">
           <Link to="/login">Login</Link>
