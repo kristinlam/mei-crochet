@@ -33,39 +33,48 @@ const Home = () => {
 
   return (
     <div>
-      <header>
-        <h1>Welcome to Mei Crochet</h1>
-        <h2>Find your next crochet project</h2>
-        <button>Shop now</button>
+      <header className="flex">
+        <div className="bg-pink flex flex-col justify-center items-center	flex-1">
+          <h1>Welcome to Mei Crochet</h1>
+          <h2>Find your next crochet project</h2>
+          <button className="bg-green rounded-full border-2	border-black px-5 py-2">
+            Shop now
+          </button>
+        </div>
+        <div className="flex-1">
+          <img alt="header" src="./images/header.jpg" />
+        </div>
       </header>
-      <section>
+      <div className="bg-green p-x-4">
+        <p>
+          Let's crochet the day away. Let's crochet the day away. Let's crochet
+          the day away. Let's crochet the day away.
+        </p>
+      </div>
+      <section className="bg-beige flex justify-around">
         {featuredPatterns?.map((pattern) => (
           <div key={pattern.id}>
-            <div style={{ width: '20rem', height: '20rem' }}>
+            <div className="w-96 h-96">
               <img
+                className="h-full w-full object-cover border-8  border-orange rounded-2xl"
                 src={pattern.image}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
-            <h3>{pattern.name}</h3>
+            <h3 className="text-center">{pattern.name}</h3>
           </div>
         ))}
       </section>
-      <section>
-        <div>Image to go here</div>
-        <div>
-          <p>
-            Feel free to add items to your cart and checkout. No account or
-            credit card needed, this site’s just for fun! On checkout, you’ll
-            receive a summary with links to all the crochet patterns you wanted,
-            which you can visit if you'd like to purchase them for real. There
-            are plenty of free patterns to enjoy too, so go crazy!
-          </p>
-          <button>Learn more</button>
-        </div>
-        <div>
-          <p>Animated text will go here. Let's crochet the day away.</p>
-        </div>
+      <section className="bg-orange flex flex-col items-center">
+        <p>
+          Feel free to add items to your cart and checkout. No account or credit
+          card needed, this site’s just for fun! On checkout, you’ll receive a
+          summary with links to all the crochet patterns you wanted, which you
+          can visit if you'd like to purchase them for real. There are plenty of
+          free patterns to enjoy too, so go crazy!
+        </p>
+        <button className="bg-green rounded-full border-2	border-black px-5 py-2">
+          Learn more
+        </button>
       </section>
     </div>
   );

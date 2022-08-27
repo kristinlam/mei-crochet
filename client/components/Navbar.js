@@ -4,32 +4,40 @@ import { Link } from 'react-router-dom';
 import { logout } from '../store';
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
-  <div>
-    <h1>Mei Crochet</h1>
-    <nav>
-      {isLoggedIn ? (
-        <div>
+  <nav>
+    {isLoggedIn ? (
+      <div className="bg-beige flex flex-row items-center justify-between">
+        <div className="flex-1">
           <Link to="/home">Home</Link>
           <Link to="/admin">Admin Dashboard</Link>
-          <Link to="/admin/users">Users</Link>
+        </div>
 
+        <div className="flex-1 text-center">
+          <h1 className="">Mei Crochet</h1>
+        </div>
+        <div className="flex-1 text-right">
           <a href="#" onClick={handleClick}>
             Logout
           </a>
         </div>
-      ) : (
-        <div>
+      </div>
+    ) : (
+      <div className="bg-beige flex flex-row items-center justify-between">
+        <div className="flex-1">
           <Link to="/">Home</Link>
           <Link to="/patterns">Patterns</Link>
           <Link to="/about">About</Link>
-          <Link to="/admin">Admin Dashboard</Link> {/* for testing */}
+        </div>
+        <div className="flex-1 text-center">
+          <h1 className="">Mei Crochet</h1>
+        </div>
+        <div className="flex-1 text-right">
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
         </div>
-      )}
-    </nav>
-    <hr />
-  </div>
+      </div>
+    )}
+  </nav>
 );
 
 /**
