@@ -54,6 +54,58 @@ async function seed() {
         'https://i.etsystatic.com/28015370/r/il/24f8ac/3727045219/il_794xN.3727045219_mri4.jpg',
       price: 796,
     },
+    {
+      name: 'Butterfly Crochet Top',
+      creator: 'Sheila • Shyler Crochets',
+      description:
+        'This pattern is very versatile as one size can fit several sizes!',
+      link: 'https://shylercrochets.com/product/butterfly-crochet-top-2/',
+      image:
+        'https://shylercrochets.com/wp-content/uploads/2022/01/2BCFB0D1-35D0-4C91-B5A1-3BD521F5C291-scaled.jpeg',
+      price: 800,
+    },
+    {
+      name: 'Smiley Face Granny Square',
+      creator: 'Krysten • yarnTh3ory',
+      description:
+        'This smiley face motif kept popping up everywhere and I knew immediately that I wanted to recreate it using braided cotton cord. I chose this fiber because I wanted to make a project that held its shape and that could hold up to frequent use.You may have noticed from my previous tutorials that this cord is one of my go to fibers to use for a variety of projects.',
+      link: 'https://www.yarnth3ory.com/post/tutorial-smiley-face-granny-square',
+      image:
+        'https://static.wixstatic.com/media/86bc9b_2c1d860b2fa3449bbcfb54c009b28fbb~mv2.jpg/v1/fill/w_1000,h_750,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/86bc9b_2c1d860b2fa3449bbcfb54c009b28fbb~mv2.jpg',
+      price: 0,
+    },
+    {
+      name: 'Sweetheart Top',
+      creator: 'Molly Tooher-Rudd • Made by Molly',
+      description: 'Retro styled heart halter top with bold, groovy colors.',
+      link: 'https://ribblr.com/pattern/sweetheart-top-crochet',
+      image:
+        'https://storage.googleapis.com/ribblr-disk/pics/9169/cover-41rspyjfe5.jpg',
+      price: 664,
+    },
+    {
+      name: 'Duck Bag',
+      creator: '霭井 on Xiaohongshu',
+      description:
+        'Originally posted by 霭井 on Xiaohongshu, a Chinese social media and e-commerce platform. Translated by @strawberriucrochets on Instagram.',
+      link: 'https://drive.google.com/file/d/1OZi-z1tsWVZuiczspcFPngKYIpR0DmV9/view',
+      price: 0,
+    },
+    {
+      name: 'TikTok Viral Crochet Bralette',
+      creator: 'Made by BJax',
+      description: 'Colorful and fun bralette!',
+      link: 'https://www.youtube.com/watch?v=QXa9Zeak-TQ',
+      price: 0,
+    },
+    {
+      name: '3D Flower Granny Square Bucket Hat',
+      creator: 'Mellinsomnia',
+      description:
+        'Make yourself a perfect #buckethat for any season. If you want something unique, cute, and to make a statement, this hat is for you.',
+      link: 'https://www.youtube.com/watch?v=QXa9Zeak-TQ',
+      price: 0,
+    },
   ];
   const createdPatterns = await Promise.all(
     patterns.map((pattern) => Pattern.create(pattern))
