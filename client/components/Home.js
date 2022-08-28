@@ -19,6 +19,8 @@ function getRandom(arr, n) {
   return result;
 }
 
+const colors = ['bg-green-light', 'bg-blue', 'bg-purple'];
+
 const Home = () => {
   const patterns = useSelector((state) => state.patterns);
   const dispatch = useDispatch();
@@ -29,80 +31,81 @@ const Home = () => {
 
   let featuredPatterns = [];
   if (patterns.length > 0) {
-    featuredPatterns = getRandom(patterns, 4);
+    featuredPatterns = getRandom(patterns, 3);
   }
 
   return (
     <div>
       <header className="bg-[url('/images/header.jpg')] bg-center bg-cover">
-        <div className="h-[50vh] lg:h-[80vh] flex flex-col justify-center items-center	text-center">
-          <h1 className="textstroke text-9xl font-semibold text-[#f7b8b8] drop-shadow-[11px_11px_rgb(0,0,0)]">
+        <div className="h-[50vh] lg:h-[70vh] flex flex-col justify-center items-center text-center">
+          <h1 className="textstroke text-9xl font-semibold text-orange drop-shadow-[11px_11px_rgb(244,122,59)]">
             Mei Crochet
           </h1>
-          <h2 className="mb-4">Find your next crochet project</h2>
-          <Link
-            className="bg-green rounded-full border-2	border-black px-5 py-2"
-            to="/shop"
-          >
-            Shop now
-          </Link>
+          <div className="mt-12 inline-block bg-orange text-orange-dark drop-shadow-[6px_6px_rgb(244,122,59)] rounded-full border-2 px-6 py-4">
+            <Link className="text-2xl" to="/shop">
+              Shop All
+            </Link>
+          </div>
         </div>
       </header>
-      <div className="bg-[#CAD62F]">
+      <div className="bg-green text-white">
         <div className="relative flex overflow-x-hidden">
           <div className="py-6 animate-marquee whitespace-nowrap">
-            <span className="text-4xl mx-4">Let's crochet the day away.</span>
-            <span className="text-4xl mx-4">Let's crochet the day away.</span>
-            <span className="text-4xl mx-4">Let's crochet the day away.</span>
+            <span className="text-4xl mx-4">Find your next project.</span>
+            <span className="text-4xl mx-4">Support pattern designers.</span>
+            <span className="text-4xl mx-4">Crochet the day away.</span>
+            <span className="text-4xl mx-4">Find your next project.</span>
+            <span className="text-4xl mx-4">Support pattern designers.</span>
+            <span className="text-4xl mx-4">Crochet the day away.</span>
           </div>
 
           <div className="py-6 absolute top-0 animate-marquee2 whitespace-nowrap">
-            <span className="text-4xl mx-4">Let's crochet the day away.</span>
-            <span className="text-4xl mx-4">Let's crochet the day away.</span>
-            <span className="text-4xl mx-4">Let's crochet the day away.</span>
+            <span className="text-4xl mx-4">Find your next project.</span>
+            <span className="text-4xl mx-4">Support pattern designers.</span>
+            <span className="text-4xl mx-4">Crochet the day away.</span>
+            <span className="text-4xl mx-4">Find your next project.</span>
+            <span className="text-4xl mx-4">Support pattern designers.</span>
+            <span className="text-4xl mx-4">Crochet the day away.</span>
           </div>
         </div>
       </div>
-      <section className="bg-beige flex flex-col items-center text-center py-20">
-        <div className="w-5/6">
-          <h2 className="mb-16">Patterns</h2>
-          <div className="lg:flex lg:justify-around">
-            {featuredPatterns?.map((pattern) => (
-              <div key={pattern.id} className=" mb-10 lg:mb-0">
-                <div className="border-2 border-black rounded-2xl overflow-hidden mx-auto w-96 h-96 lg:w-64 lg:h-64 xl:w-80 xl:h-80 mb-4 sm:mb-6">
-                  <img
-                    className="h-full w-full object-cover "
-                    src={pattern.image}
-                  />
-                </div>
-                {/* <h3 className="text-center">{pattern.name}</h3> */}
+      <section className="bg-beige py-20 flex flex-col items-center text-center justify-center">
+        <h2 className="mb-12">Patterns</h2>
+
+        <div className="inline-block lg:flex gap-x-6 xl:gap-x-14">
+          {featuredPatterns?.map((pattern, el) => (
+            <div
+              key={pattern.id}
+              className={`${colors[el]} border drop-shadow-[11px_11px_rgb(0,0,0)] p-6 lg:flex-1 mb-10 lg:mb-0 rounded-md mb-4 sm:mb-6`}
+            >
+              <div className="overflow-hidden mx-auto w-96 h-96 lg:w-64 lg:h-64 xl:w-[25rem] xl:h-[25rem]">
+                <img
+                  className="rounded h-full w-full object-cover"
+                  src={pattern.image}
+                />
               </div>
-            ))}
-          </div>
+              <div className="mt-6 text-center">
+                <h3 className="px-2 text-xl">{pattern.name}</h3>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
-      <section className="bg-orange flex flex-col items-center text-center py-20">
-        <div className="w-5/6 lg:w-1/2">
-          <h2 className="mb-16">How it works</h2>
-
-          <p>
+      <section className="bg-pink flex flex-col items-center text-center py-20">
+        <div className="w-5/6 lg:w-1/2 xl:w-1/3">
+          <h2 className="mb-8">How it works</h2>
+          <p className="text-xl mb-6">
             Feel free to add items to your cart and checkout. No account or
             credit card needed, this site’s just for fun! On checkout, you’ll
             receive a summary with links to all the crochet patterns you wanted,
             which you can visit if you'd like to purchase them for real. There
-            are plenty of free patterns to enjoy too, so go crazy!
+            are plenty of free patterns to enjoy too!
           </p>
-          <Link
-            className="bg-green rounded-full border-2	border-black px-5 py-2"
-            to="/about"
-          >
-            Learn more
-          </Link>
+          <div className="inline-block bg-green-light rounded-full border-2 border-black px-5 py-2">
+            <Link to="/about">Learn more</Link>
+          </div>
         </div>
       </section>
-      <footer>
-        <p>Mei Crochet copyright</p>
-      </footer>
     </div>
   );
 };

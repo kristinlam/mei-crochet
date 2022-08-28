@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 import { logout } from '../store';
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
-  <nav className="bg-green px-6 py-6 border-y-2">
+  <nav className="bg-beige px-6 py-6 border-b-2">
     {isLoggedIn ? (
       <div className="flex flex-row items-center justify-between">
-        <div className="flex-1 flex gap-x-4">
-          <Link to="/admin">Admin Dashboard</Link>
+        <div className="flex-1 flex gap-x-10 items-end">
+          <Link className="text-2xl" to="/">
+            Mei Crochet
+          </Link>
           <Link to="/shop">Shop</Link>
           <Link to="/about">About</Link>
         </div>
 
-        <div className="flex-1 text-center">
-          <Link to="/">Mei Crochet</Link>
-        </div>
-        <div className="flex-1 justify-end flex gap-x-4">
+        <div className="flex-1 justify-end flex gap-x-10 items-end">
+          <Link to="/admin">Admin Dashboard</Link>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
@@ -24,14 +24,15 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
       </div>
     ) : (
       <div className="flex flex-row items-center justify-between">
-        <div className="flex-1 flex gap-x-4">
+        <div className="flex-1 flex gap-x-10 items-end">
+          <Link className="text-2xl" to="/">
+            Mei Crochet
+          </Link>
           <Link to="/shop">Shop</Link>
           <Link to="/about">About</Link>
         </div>
-        <div className="flex-1 text-center">
-          <Link to="/">Mei Crochet</Link>
-        </div>
-        <div className="flex-1 justify-end flex gap-x-4">
+
+        <div className="flex-1 justify-end flex gap-x-10 items-end">
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
         </div>
