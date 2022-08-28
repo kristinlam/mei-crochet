@@ -4,6 +4,7 @@
 
 .textstroke {
   -webkit-text-stroke: 3px rgb(0, 0, 0);
+  -webkit-text-stroke: 3px rgb(244, 122, 59);
 }
 
 @layer base {
