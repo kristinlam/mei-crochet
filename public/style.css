@@ -2,16 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: sans-serif;
+.textstroke {
+  -webkit-text-stroke: 3px rgb(0, 0, 0);
 }
 
 @layer base {
+  body {
+    font-family: 'Corben';
+  }
+
+  p {
+    font-family: 'Manrope';
+  }
+
   h1 {
-    @apply text-2xl;
+    @apply text-6xl;
   }
 
   h2 {
-    @apply text-xl;
+    @apply text-5xl;
   }
 }
