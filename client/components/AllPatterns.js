@@ -3,6 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getPatterns } from '../store/patterns';
 
+function convertCents(cents) {
+  let dollars = cents / 100;
+  return dollars.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+}
+
 const AllPatterns = () => {
   const patterns = useSelector((state) => state.patterns);
   const dispatch = useDispatch();
@@ -12,22 +20,27 @@ const AllPatterns = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>All Patterns</h1>
-      <div>
-        {patterns.map((pattern) => (
-          <div>
-            <h2>{pattern.name}</h2>
-            <div style={{ width: '20rem', height: '20rem' }}>
-              <img
-                src={pattern.image}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
+    <div className="bg-yellow">
+      <div className="py-10 px-6">
+        <h1 className="text-orange-100 font-bold text-center mb-16">
+          All Patterns
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+          {patterns.map((pattern) => (
+            <div className="w-full">
+              <div>
+                <img src={pattern.image} className="object-cover rounded-2xl" />
+              </div>
+              <div className="text-center">
+                <h3>{pattern.name}</h3>
+                <p>{pattern.creator}</p>
+                <p>
+                  {pattern.price !== 0 ? convertCents(pattern.price) : 'Free'}
+                </p>
+              </div>
             </div>
-            <p>{pattern.creator}</p>
-            <p>{pattern.price}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
