@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { getPatterns } from '../store/patterns';
+import { Link } from 'react-router-dom';
 
 function convertCents(cents) {
   let dollars = cents / 100;
@@ -27,18 +27,23 @@ const AllPatterns = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {patterns.map((pattern) => (
-            <div className="w-full">
-              <div>
-                <img src={pattern.image} className="object-cover rounded-2xl" />
+            <Link key={pattern.id} to={`/shop/${pattern.id}`}>
+              <div className="w-full">
+                <div>
+                  <img
+                    src={pattern.image}
+                    className="object-cover rounded-2xl"
+                  />
+                </div>
+                <div className="text-center">
+                  <h3>{pattern.name}</h3>
+                  <p>{pattern.creator}</p>
+                  <p>
+                    {pattern.price !== 0 ? convertCents(pattern.price) : 'Free'}
+                  </p>
+                </div>
               </div>
-              <div className="text-center">
-                <h3>{pattern.name}</h3>
-                <p>{pattern.creator}</p>
-                <p>
-                  {pattern.price !== 0 ? convertCents(pattern.price) : 'Free'}
-                </p>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

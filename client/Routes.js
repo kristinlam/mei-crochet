@@ -6,6 +6,7 @@ import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import About from './components/About';
 import AllPatterns from './components/AllPatterns';
+import SinglePattern from './components/SinglePattern';
 import AdminHome from './components/admin/AdminHome';
 import AllUsers from './components/admin/AllUsers';
 
@@ -40,7 +41,8 @@ class Routes extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/shop" component={AllPatterns} />
+          <Route exact path="/shop" component={AllPatterns} />
+          <Route path="/shop/:id" component={SinglePattern} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route exact path="/admin" component={AdminHome} />
