@@ -20,7 +20,7 @@ const Pattern = db.define('pattern', {
   },
   image: {
     type: Sequelize.TEXT,
-    defaultValue: 'images/pending.jpg',
+    defaultValue: '/images/pending.jpg',
   },
   price: {
     type: Sequelize.INTEGER,
