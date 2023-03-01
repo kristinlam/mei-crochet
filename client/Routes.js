@@ -26,7 +26,10 @@ class Routes extends Component {
           <Route path="/about" component={About} />
           <Route path="/shop" component={AllPatterns} />
           <Route path="/shop/:id" component={SinglePattern} />
-          <Route path="/login" component={Login} />
+          <Route path="/login">
+            {isLoggedIn ? <Redirect to="/admin" /> : <Login />}
+          </Route>
+
           <Route path="/signup" component={Signup} />
         </Switch>
         {isLoggedIn && (
@@ -34,7 +37,6 @@ class Routes extends Component {
             <Route path="/admin" exact component={AdminHome} />
             <Route path="/admin/users" component={UserDashboard} />
             <Route path="/admin/patterns" component={PatternDashboard} />
-            <Redirect to="/admin" />
           </Switch>
         )}
       </div>
