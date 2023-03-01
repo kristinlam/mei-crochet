@@ -9,13 +9,13 @@ const UserDashboard = () => {
 
   useEffect(() => {
     dispatch(getUsers());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div>
       <h1>User Dashboard</h1>
       {users.map((user) => (
-        <div>
+        <div key={user.id}>
           <p>ID: {user.id}</p>
           <p>Username: {user.username}</p>
           <p>Account Type: {user.isAdmin ? 'Admin' : 'User'}</p>

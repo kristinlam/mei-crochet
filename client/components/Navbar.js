@@ -31,10 +31,10 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
           <Link to="/shop">Shop</Link>
           <Link to="/about">About</Link>
         </div>
-
         <div className="flex-1 justify-end flex gap-x-10 items-end">
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
+          <Link to="/cart">Cart</Link>
         </div>
       </div>
     )}

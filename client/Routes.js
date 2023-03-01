@@ -8,11 +8,9 @@ import About from './components/About';
 import AllPatterns from './components/AllPatterns';
 import SinglePattern from './components/SinglePattern';
 import AdminHome from './components/admin/AdminHome';
-import AllUsers from './components/admin/AllUsers';
+import UserDashboard from './components/admin/UserDashboard';
+import PatternDashboard from './components/admin/PatternDashboard';
 
-/**
- * COMPONENT
- */
 class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData();
@@ -23,31 +21,22 @@ class Routes extends Component {
 
     return (
       <div>
-        {/* {isLoggedIn ? (
-          <Switch>
-            <Route path="/admin" component={AdminHome} />
-            <Route path="/admin/users" component={AllUsers} />
-            <Redirect to="/home" />
-          </Switch>
-        ) : (
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/patterns" component={AllPatterns} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
-          </Switch>
-        )} */}
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route exact path="/shop" component={AllPatterns} />
+          <Route path="/shop" component={AllPatterns} />
           <Route path="/shop/:id" component={SinglePattern} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route exact path="/admin" component={AdminHome} />
-          <Route path="/admin/users" component={AllUsers} />
         </Switch>
+        {isLoggedIn && (
+          <Switch>
+            <Route path="/admin" exact component={AdminHome} />
+            <Route path="/admin/users" component={UserDashboard} />
+            <Route path="/admin/patterns" component={PatternDashboard} />
+            <Redirect to="/admin" />
+          </Switch>
+        )}
       </div>
     );
   }
@@ -58,8 +47,6 @@ class Routes extends Component {
  */
 const mapState = (state) => {
   return {
-    // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
-    // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
     isLoggedIn: !!state.auth.id,
   };
 };
