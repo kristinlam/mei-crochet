@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getUsers } from '../../store/users';
 
-const AllUsers = () => {
+const UserDashboard = () => {
   const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
 
@@ -13,7 +13,7 @@ const AllUsers = () => {
 
   return (
     <div>
-      <h1>All Users</h1>
+      <h1>User Dashboard</h1>
       {users.map((user) => (
         <div>
           <p>ID: {user.id}</p>
@@ -25,4 +25,4 @@ const AllUsers = () => {
   );
 };
 
-export default AllUsers;
+export default UserDashboard;
