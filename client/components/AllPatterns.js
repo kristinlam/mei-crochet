@@ -17,7 +17,7 @@ const AllPatterns = () => {
 
   useEffect(() => {
     dispatch(getPatterns());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="bg-yellow">
@@ -25,16 +25,15 @@ const AllPatterns = () => {
         <h1 className="text-orange-100 font-bold text-center mb-16">
           All Patterns
         </h1>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {patterns.map((pattern) => (
             <Link key={pattern.id} to={`/shop/${pattern.id}`}>
-              <div className="w-full">
-                <div>
-                  <img
-                    src={pattern.image}
-                    className="object-cover rounded-2xl"
-                  />
-                </div>
+              <div>
+                <img
+                  src={pattern.image}
+                  className="object-cover w-full aspect-square rounded-2xl"
+                />
                 <div className="text-center">
                   <h3>{pattern.name}</h3>
                   <p>{pattern.creator}</p>
