@@ -4,7 +4,6 @@ import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { me } from './store';
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
-import About from './components/About';
 import AllPatterns from './components/AllPatterns';
 import SinglePattern from './components/SinglePattern';
 import AdminHome from './components/admin/AdminHome';
@@ -23,7 +22,6 @@ class Routes extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
           <Route exact path="/shop" component={AllPatterns} />
           <Route path="/shop/:id" component={SinglePattern} />
           <Route path="/login">

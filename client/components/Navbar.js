@@ -12,7 +12,6 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
             Mei Crochet
           </Link>
           <Link to="/shop">Shop</Link>
-          <Link to="/about">About</Link>
         </div>
 
         <div className="flex-1 justify-end flex gap-x-10 items-end">
@@ -29,7 +28,6 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
             Mei Crochet
           </Link>
           <Link to="/shop">Shop</Link>
-          <Link to="/about">About</Link>
         </div>
         <div className="flex-1 justify-end flex gap-x-10 items-end">
           <Link to="/login">Login</Link>
