@@ -31,7 +31,6 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
         </div>
         <div className="flex-1 justify-end flex gap-x-10 items-end">
           <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
           <Link to="/cart">Cart</Link>
         </div>
       </div>
@@ -39,9 +38,6 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
   </nav>
 );
 
-/**
- * CONTAINER
- */
 const mapState = (state) => {
   return {
     isLoggedIn: !!state.auth.id,
