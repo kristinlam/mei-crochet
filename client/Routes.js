@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { me } from './store';
+import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
-import HomePage from './pages/HomePage';
+import CartPage from './pages/CartPage';
 import AllPatterns from './components/AllPatterns';
 import SinglePattern from './components/SinglePattern';
 import AdminHome from './components/admin/AdminHome';
@@ -25,6 +26,7 @@ class Routes extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={AllPatterns} />
           <Route path="/shop/:id" component={SinglePattern} />
+          <Route path="/cart" component={CartPage} />
           <Route path="/login">
             {isLoggedIn ? <Redirect to="/admin" /> : <LoginPage />}
           </Route>
