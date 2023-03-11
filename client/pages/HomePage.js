@@ -38,7 +38,7 @@ const Home = () => {
     <div>
       <header className="bg-[url('/images/header.jpg')] bg-center bg-cover">
         <div className="h-[50vh] lg:h-[75vh] flex flex-col justify-center items-center text-center">
-          <h1 className="textstroke text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-yellow drop-shadow-[11px_11px_rgb(244,122,59)]">
+          <h1 className="textstroke text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-yellow drop-shadow-[11px_11px_rgb(244,122,59)]">
             Mei Crochet
           </h1>
           <div className="mt-12 inline-block bg-yellow text-orange-200 drop-shadow-[6px_6px_rgb(244,122,59)] rounded-full border-2 px-6 py-4">
@@ -70,7 +70,7 @@ const Home = () => {
         </div>
       </div>
       <Section backgroundColor="bg-yellow" textColor="text-orange-300">
-        <h2 className="mb-12 font-bold">Patterns</h2>
+        <h2 className="mb-12">Patterns</h2>
         <div className="max-w-screen-2xl flex flex-col md:flex-row gap-x-6 xl:gap-x-12">
           {featuredPatterns?.map((pattern, el) => (
             <div
@@ -89,7 +89,7 @@ const Home = () => {
       </Section>
       <Section backgroundColor="bg-pink-100" textColor="text-orange-300">
         <div className="max-w-screen-sm">
-          <h2 className="mb-8 font-bold">How it works</h2>
+          <h2 className="mb-8">How it works</h2>
           <p className="text-xl">
             Feel free to add items to your cart and checkout. No account or
             credit card needed, this site’s just for fun! On checkout, you’ll
