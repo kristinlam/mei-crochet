@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { me } from './store';
 import { Login, Signup } from './components/AuthForm';
-import Home from './components/Home';
+import HomePage from './pages/HomePage';
 import AllPatterns from './components/AllPatterns';
 import SinglePattern from './components/SinglePattern';
 import AdminHome from './components/admin/AdminHome';
@@ -21,7 +21,7 @@ class Routes extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={AllPatterns} />
           <Route path="/shop/:id" component={SinglePattern} />
           <Route path="/login">
@@ -40,10 +40,6 @@ class Routes extends Component {
     );
   }
 }
-
-/**
- * CONTAINER
- */
 const mapState = (state) => {
   return {
     isLoggedIn: !!state.auth.id,
@@ -58,6 +54,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-// The `withRouter` wrapper makes sure that updates are not blocked
-// when the url changes
 export default withRouter(connect(mapState, mapDispatch)(Routes));

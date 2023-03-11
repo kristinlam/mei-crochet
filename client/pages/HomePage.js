@@ -27,7 +27,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getPatterns());
-  }, [dispatch]);
+  }, []);
 
   let featuredPatterns = [];
   if (patterns.length > 0) {
@@ -38,7 +38,7 @@ const Home = () => {
     <div>
       <header className="bg-[url('/images/header.jpg')] bg-center bg-cover">
         <div className="h-[50vh] lg:h-[75vh] flex flex-col justify-center items-center text-center">
-          <h1 className="textstroke text-9xl font-bold text-yellow drop-shadow-[11px_11px_rgb(244,122,59)]">
+          <h1 className="textstroke text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-yellow drop-shadow-[11px_11px_rgb(244,122,59)]">
             Mei Crochet
           </h1>
           <div className="mt-12 inline-block bg-yellow text-orange-200 drop-shadow-[6px_6px_rgb(244,122,59)] rounded-full border-2 px-6 py-4">
@@ -69,18 +69,18 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <section className="bg-yellow text-orange-300 py-20 flex flex-col items-center text-center justify-center">
+      <section className="bg-yellow text-orange-300 py-20 px-4 md:px-10 flex flex-col items-center text-center justify-center">
         <h2 className="mb-12 font-bold">Patterns</h2>
 
-        <div className="inline-block lg:flex gap-x-6 xl:gap-x-14">
+        <div className="max-w-screen-2xl flex flex-col md:flex-row gap-x-6 xl:gap-x-12">
           {featuredPatterns?.map((pattern, el) => (
             <div
               key={pattern.id}
-              className={`${colors[el]} p-6 lg:flex-1 mb-10 lg:mb-0 rounded-md mb-4 sm:mb-6`}
+              className={`${colors[el]} p-5 flex-1 rounded-md mb-4 sm:mb-6 lg:mb-0`}
             >
-              <div className="overflow-hidden mx-auto w-96 h-96 lg:w-64 lg:h-64 xl:w-[25rem] xl:h-[25rem]">
+              <div>
                 <img
-                  className="rounded h-full w-full object-cover"
+                  className="object-cover w-full aspect-square rounded"
                   src={pattern.image}
                 />
               </div>
@@ -91,19 +91,16 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <section className="bg-pink-100 text-orange-300 flex flex-col items-center text-center py-20">
-        <div className="w-5/6 lg:w-1/2 xl:w-1/3">
+      <section className="bg-pink-100 text-orange-300 py-20 px-8 sm:px-14 flex flex-col items-center text-center justify-center">
+        <div className="max-w-screen-sm">
           <h2 className="mb-8 font-bold">How it works</h2>
-          <p className="text-xl mb-6">
+          <p className="text-xl">
             Feel free to add items to your cart and checkout. No account or
             credit card needed, this site’s just for fun! On checkout, you’ll
             receive a summary with links to all the crochet patterns you wanted,
             which you can visit if you'd like to purchase them for real. There
             are plenty of free patterns to enjoy too!
           </p>
-          <div className="inline-block bg-yellow text-orange-200 drop-shadow-[3px_3px_rgb(244,122,59)] rounded-full border-2 px-5 py-2">
-            <Link to="/about">Learn more</Link>
-          </div>
         </div>
       </section>
     </div>
