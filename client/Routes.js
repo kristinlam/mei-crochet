@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { me } from './store';
-import { Login, Signup } from './components/AuthForm';
 import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 import HomePage from './pages/HomePage';
 import AllPatterns from './components/AllPatterns';
 import SinglePattern from './components/SinglePattern';
@@ -28,7 +28,7 @@ class Routes extends Component {
           <Route path="/login">
             {isLoggedIn ? <Redirect to="/admin" /> : <LoginPage />}
           </Route>
-          <Route path="/signup" component={Signup} />
+          <Route path="/signup" component={SignupPage} />
         </Switch>
         {isLoggedIn && (
           <Switch>
