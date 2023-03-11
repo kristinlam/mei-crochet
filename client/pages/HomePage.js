@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { getPatterns } from '../store/patterns';
 import { Link } from 'react-router-dom';
+import Section from '../components/Section';
 
 // Generate random patterns
 function getRandom(arr, n) {
@@ -69,9 +69,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <section className="bg-yellow text-orange-300 py-20 px-4 md:px-10 flex flex-col items-center text-center justify-center">
+      <Section backgroundColor="bg-yellow" textColor="text-orange-300">
         <h2 className="mb-12 font-bold">Patterns</h2>
-
         <div className="max-w-screen-2xl flex flex-col md:flex-row gap-x-6 xl:gap-x-12">
           {featuredPatterns?.map((pattern, el) => (
             <div
@@ -84,14 +83,11 @@ const Home = () => {
                   src={pattern.image}
                 />
               </div>
-              {/* <div className="mt-6 text-center">
-                <h3 className="px-2 text-xl">{pattern.name}</h3>
-              </div> */}
             </div>
           ))}
         </div>
-      </section>
-      <section className="bg-pink-100 text-orange-300 py-20 px-8 sm:px-14 flex flex-col items-center text-center justify-center">
+      </Section>
+      <Section backgroundColor="bg-pink-100" textColor="text-orange-300">
         <div className="max-w-screen-sm">
           <h2 className="mb-8 font-bold">How it works</h2>
           <p className="text-xl">
@@ -102,7 +98,7 @@ const Home = () => {
             are plenty of free patterns to enjoy too!
           </p>
         </div>
-      </section>
+      </Section>
     </div>
   );
 };
