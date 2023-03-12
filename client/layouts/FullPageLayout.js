@@ -5,19 +5,26 @@ const FullPageLayout = ({
   children,
   backgroundColor,
   textColor,
-  heading,
-  ...rest
+  centered,
+  className,
 }) => {
-  const classes = classNames(
-    'max-w-screen-2xl py-10 px-6',
-    backgroundColor,
+  const containerClasses = classNames(
+    'min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-4.5rem)]', // subtract height of navbar
+    {
+      'text-center': centered,
+    },
+    backgroundColor
+  );
+
+  const contentClasses = classNames(
+    'max-w-screen-2xl py-10 px-6 mx-auto',
     textColor,
-    rest.className
+    className
   );
 
   return (
-    <div {...rest} className={classes}>
-      {children}
+    <div className={containerClasses}>
+      <div className={contentClasses}>{children}</div>
     </div>
   );
 };
