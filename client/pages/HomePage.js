@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getPatterns } from '../store/patterns';
 import { Link } from 'react-router-dom';
 import Section from '../components/Section';
+import Button from '../components/Button';
 
 // Generate random patterns
 function getRandom(arr, n) {
@@ -38,14 +39,19 @@ const Home = () => {
     <div>
       <header className="bg-[url('/images/header.jpg')] bg-center bg-cover">
         <div className="h-[50vh] lg:h-[75vh] flex flex-col justify-center items-center text-center">
-          <h1 className="textstroke text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-yellow drop-shadow-[11px_11px_rgb(244,122,59)]">
+          <h1 className="textstroke text-yellow drop-shadow-[11px_11px_rgb(244,122,59)] mb-12">
             Mei Crochet
           </h1>
-          <div className="mt-12 inline-block bg-yellow text-orange-200 drop-shadow-[6px_6px_rgb(244,122,59)] rounded-full border-2 px-6 py-4">
+          <Button
+            backgroundColor="bg-yellow"
+            textColor="text-orange-200"
+            border="2"
+            className="inline-block px-6 py-4"
+          >
             <Link className="text-2xl" to="/shop">
               Shop All
             </Link>
-          </div>
+          </Button>
         </div>
       </header>
       <div className="bg-green-200 text-beige">
