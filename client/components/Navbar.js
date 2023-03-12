@@ -1,40 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { logout } from '../store';
 
-const Navbar = ({ handleClick, isLoggedIn }) => (
-  <nav className="font-serif text-green-200 bg-beige-200 border-b-2 px-6 py-4">
-    {isLoggedIn ? (
-      <div className="flex flex-row items-center justify-between">
-        <div className="flex-1 flex gap-x-10 items-end">
-          <Link className="text-2xl" to="/">
-            Mei Crochet
-          </Link>
-          <Link to="/shop">Shop</Link>
-        </div>
-
-        <div className="flex-1 justify-end flex gap-x-10 items-end">
-          <Link to="/admin">Admin Dashboard</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-        </div>
+const Navbar = ({ isLoggedIn }) => (
+  <nav className="font-serif text-orange-300 border-b-4 bg-yellow-100 px-6 py-4 text-xl">
+    <div className="flex flex-row items-center justify-between">
+      <div className="flex-1 flex gap-x-10 items-end">
+        <Link className="text-4xl" to="/">
+          Mei Crochet
+        </Link>
+        <Link to="/shop">Shop</Link>
       </div>
-    ) : (
-      <div className="flex flex-row items-center justify-between">
-        <div className="flex-1 flex gap-x-10 items-end">
-          <Link className="text-2xl" to="/">
-            Mei Crochet
-          </Link>
-          <Link to="/shop">Shop</Link>
-        </div>
-        <div className="flex-1 justify-end flex gap-x-10 items-end">
+
+      <div className="flex-1 justify-end flex gap-x-10 items-end">
+        {isLoggedIn ? (
+          <div className="flex-1 justify-end flex gap-x-10 items-end">
+            <Link to="/account">Account</Link>
+          </div>
+        ) : (
           <Link to="/login">Login</Link>
-          <Link to="/cart">Cart</Link>
-        </div>
+        )}
+        <Link to="/cart">Cart</Link>
       </div>
-    )}
+    </div>
   </nav>
 );
 
@@ -44,12 +32,4 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = (dispatch) => {
-  return {
-    handleClick() {
-      dispatch(logout());
-    },
-  };
-};
-
-export default connect(mapState, mapDispatch)(Navbar);
+export default connect(mapState, null)(Navbar);

@@ -8,7 +8,7 @@ import SignupPage from './pages/SignupPage';
 import PatternsPage from './pages/PatternsPage';
 import SinglePatternPage from './pages/SinglePatternPage';
 import CartPage from './pages/CartPage';
-import AdminHome from './components/admin/AdminHome';
+import AccountPage from './pages/AccountPage';
 import UserDashboard from './components/admin/UserDashboard';
 import PatternDashboard from './components/admin/PatternDashboard';
 
@@ -28,13 +28,15 @@ class Routes extends Component {
           <Route path="/shop/:id" component={SinglePatternPage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/login">
-            {isLoggedIn ? <Redirect to="/admin" /> : <LoginPage />}
+            {isLoggedIn ? <Redirect to="/account" /> : <LoginPage />}
           </Route>
-          <Route path="/signup" component={SignupPage} />
+          <Route path="/signup">
+            {isLoggedIn ? <Redirect to="/account" /> : <SignupPage />}
+          </Route>
         </Switch>
         {isLoggedIn && (
           <Switch>
-            <Route path="/admin" exact component={AdminHome} />
+            <Route path="/account" component={AccountPage} />
             <Route path="/admin/users" component={UserDashboard} />
             <Route path="/admin/patterns" component={PatternDashboard} />
           </Switch>
