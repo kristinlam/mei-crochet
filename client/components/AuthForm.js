@@ -7,7 +7,7 @@ const AuthForm = ({ name, displayName, handleSubmit, error }) => {
   return (
     <div>
       <form
-        className="flex flex-col items-center"
+        className="flex flex-col items-center mb-12"
         onSubmit={handleSubmit}
         name={name}
       >
