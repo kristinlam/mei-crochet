@@ -5,15 +5,10 @@ const {
   models: { User, Pattern },
 } = require('../server/db');
 
-/**
- * seed - this function clears the database, updates tables to
- *      match the models, and populates the database.
- */
 async function seed() {
-  await db.sync({ force: true }); // clears db and matches models to tables
+  await db.sync({ force: true });
   console.log('db synced!');
 
-  // Users
   const users = [
     { username: 'a', password: 'a', isAdmin: true },
     { username: 'u', password: 'u' },
@@ -22,7 +17,6 @@ async function seed() {
     users.map((user) => User.create(user))
   );
 
-  // Patterns
   const patterns = [
     {
       name: 'Gingham Tote Bag',
@@ -84,29 +78,23 @@ async function seed() {
       price: 664,
     },
     {
-      name: 'Duck Bag',
-      creator: '霭井 on Xiaohongshu',
+      name: 'Duille Scarf',
+      creator: 'Carrie • Crochet with Carrie',
       description:
-        'Originally posted by 霭井 on Xiaohongshu, a Chinese social media and e-commerce platform. Translated by @strawberriucrochets on Instagram.',
-      link: 'https://drive.google.com/file/d/1OZi-z1tsWVZuiczspcFPngKYIpR0DmV9/view',
+        'Designed to be extra oversized, this scarf will blanket you in so much coziness this winter. The word Duille [dil-a] is Irish and translates to “leaf” in English.',
+      link: 'https://www.crochetwithcarrie.com/crochet-duille-scarf/',
       price: 0,
     },
     {
-      name: 'TikTok Viral Crochet Bralette',
-      creator: 'Made by BJax',
-      description: 'Colorful and fun bralette!',
-      link: 'https://www.youtube.com/watch?v=QXa9Zeak-TQ',
-      price: 0,
-    },
-    {
-      name: '3D Flower Granny Square Bucket Hat',
-      creator: 'Mellinsomnia',
-      description:
-        'Make yourself a perfect #buckethat for any season. If you want something unique, cute, and to make a statement, this hat is for you.',
-      link: 'https://www.youtube.com/watch?v=QXa9Zeak-TQ',
+      name: 'Daisy Bucket Hat',
+      creator: 'Yawning Yarning Crochet',
+      description: 'A cute bucket hat with 3D daisies on the sides.',
+      link: 'https://www.youtube.com/watch?v=T1IBjMd_Z9I',
+      image: 'https://cf.shopee.com.my/file/2da10245e075af0bf037ef204ca3be1f',
       price: 0,
     },
   ];
+
   const createdPatterns = await Promise.all(
     patterns.map((pattern) => Pattern.create(pattern))
   );
@@ -116,11 +104,6 @@ async function seed() {
   console.log(`seeded successfully`);
 }
 
-/*
- We've separated the `seed` function from the `runSeed` function.
- This way we can isolate the error handling and exit trapping.
- The `seed` function is concerned only with modifying the database.
-*/
 async function runSeed() {
   console.log('seeding...');
   try {
@@ -135,14 +118,8 @@ async function runSeed() {
   }
 }
 
-/*
-  Execute the `seed` function, IF we ran this module directly (`node seed`).
-  `Async` functions always return a promise, so we can use `catch` to handle
-  any errors that might occur inside of `seed`.
-*/
 if (module === require.main) {
   runSeed();
 }
 
-// we export the seed function for testing purposes (see `./seed.spec.js`)
 module.exports = seed;
