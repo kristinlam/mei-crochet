@@ -1,24 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Login } from '../components/AuthForm';
-import FullScreenCenteredDivLayout from '../layouts/FullScreenCenteredDivLayout';
+import FullPageLayout from '../layouts/FullPageLayout';
 
 const LoginPage = () => {
   return (
-    <FullScreenCenteredDivLayout
+    <FullPageLayout
+      centered
       backgroundColor="bg-beige-100"
       textColor="text-orange-300"
-      heading="Hi again!"
     >
+      <h1 className="mb-8">Hi again!</h1>
       <Login />
-
       <div className="text-xl text-center">
         <p className="font-bold">New around here? Create an account!</p>
         <Link className="underline" to="/signup">
           Sign up
         </Link>
       </div>
-    </FullScreenCenteredDivLayout>
+    </FullPageLayout>
   );
 };
 

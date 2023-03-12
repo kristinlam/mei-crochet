@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Signup } from '../components/AuthForm';
-import FullScreenCenteredDivLayout from '../layouts/FullScreenCenteredDivLayout';
+import FullPageLayout from '../layouts/FullPageLayout';
 
 const SignupPage = () => {
   return (
-    <FullScreenCenteredDivLayout
+    <FullPageLayout
+      centered
       backgroundColor="bg-beige-100"
       textColor="text-orange-300"
-      heading="Join us!"
     >
+      <h1 className="mb-8">Join us!</h1>
       <Signup />
 
       <div className="text-xl text-center">
@@ -18,7 +19,7 @@ const SignupPage = () => {
           Login
         </Link>
       </div>
-    </FullScreenCenteredDivLayout>
+    </FullPageLayout>
   );
 };
 

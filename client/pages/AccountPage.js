@@ -7,7 +7,7 @@ import Button from '../components/Button.js';
 
 const AccountPage = ({ handleClick, isLoggedIn, isAdmin, username }) => {
   return (
-    <FullPageLayout>
+    <FullPageLayout centered backgroundColor="bg-beige-100">
       <h1>Hello, {username}</h1>
 
       {isAdmin ? (
