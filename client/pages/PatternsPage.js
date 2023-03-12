@@ -4,7 +4,7 @@ import { getPatterns } from '../store/patterns';
 import { Link } from 'react-router-dom';
 import { convertCents } from '../helpers';
 
-const AllPatterns = () => {
+const PatternsPage = () => {
   const patterns = useSelector((state) => state.patterns);
   const dispatch = useDispatch();
 
@@ -41,4 +41,4 @@ const AllPatterns = () => {
   );
 };
 
-export default AllPatterns;
+export default PatternsPage;

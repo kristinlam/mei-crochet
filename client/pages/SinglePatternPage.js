@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePattern } from '../store/singlePattern';
 import { convertCents } from '../helpers';
 
-const SinglePattern = (props) => {
+const SinglePatternPage = (props) => {
   const pattern = useSelector((state) => state.singlePattern);
   const dispatch = useDispatch();
 
@@ -24,4 +24,4 @@ const SinglePattern = (props) => {
   );
 };
 
-export default SinglePattern;
+export default SinglePatternPage;

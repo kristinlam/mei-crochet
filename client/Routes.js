@@ -5,9 +5,9 @@ import { me } from './store';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import PatternsPage from './pages/PatternsPage';
+import SinglePatternPage from './pages/SinglePatternPage';
 import CartPage from './pages/CartPage';
-import AllPatterns from './components/AllPatterns';
-import SinglePattern from './components/SinglePattern';
 import AdminHome from './components/admin/AdminHome';
 import UserDashboard from './components/admin/UserDashboard';
 import PatternDashboard from './components/admin/PatternDashboard';
@@ -24,8 +24,8 @@ class Routes extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={AllPatterns} />
-          <Route path="/shop/:id" component={SinglePattern} />
+          <Route exact path="/shop" component={PatternsPage} />
+          <Route path="/shop/:id" component={SinglePatternPage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/login">
             {isLoggedIn ? <Redirect to="/admin" /> : <LoginPage />}
