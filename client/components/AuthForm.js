@@ -1,27 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { authenticate } from '../store';
+import Button from './Button';
 
-const AuthForm = (props) => {
-  const { name, displayName, handleSubmit, error } = props;
-
+const AuthForm = ({ name, displayName, handleSubmit, error }) => {
   return (
     <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="username">
-            <small>Username</small>
-          </label>
-          <input name="username" type="text" />
+      <form
+        className="flex flex-col items-center"
+        onSubmit={handleSubmit}
+        name={name}
+      >
+        <div className="mb-2">
+          <label htmlFor="username">Username</label>
+          <input
+            className="w-full border border-2 p-2 rounded-md focus:outline-none focus:border-yellow"
+            name="username"
+            type="text"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="password">Password</label>
+          <input
+            className="w-full border border-2 p-2 rounded-md focus:outline-none focus:border-yellow"
+            name="password"
+            type="password"
+          />
         </div>
         <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" />
-        </div>
-        <div>
-          <button type="submit">{displayName}</button>
+          <Button
+            backgroundColor="bg-yellow"
+            textColor="text-orange-200"
+            border="2"
+            type="submit"
+          >
+            {displayName}
+          </Button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
