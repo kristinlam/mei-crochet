@@ -15,7 +15,7 @@ const PatternsPage = () => {
   }, []);
 
   return (
-    <FullPageLayout backgroundColor="bg-beige-100">
+    <FullPageLayout>
       <h1 className="text-orange-300 text-center mb-16">All Patterns</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">

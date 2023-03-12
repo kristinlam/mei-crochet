@@ -5,11 +5,7 @@ import FullPageLayout from '../layouts/FullPageLayout';
 
 const SignupPage = () => {
   return (
-    <FullPageLayout
-      centered
-      backgroundColor="bg-beige-100"
-      textColor="text-orange-300"
-    >
+    <FullPageLayout xCentered yPadding="20" textColor="text-orange-300">
       <h1 className="mb-8">Join us!</h1>
       <Signup />
 

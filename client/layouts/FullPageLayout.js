@@ -5,19 +5,21 @@ const FullPageLayout = ({
   children,
   backgroundColor,
   textColor,
-  centered,
+  xCentered,
+  yPadding,
   className,
 }) => {
   const containerClasses = classNames(
     'min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-4.5rem)]', // subtract height of navbar
     {
-      'text-center': centered,
+      'flex flex-col items-center': xCentered,
     },
-    backgroundColor
+    backgroundColor ? `bg-${backgroundColor}` : 'bg-beige-100'
   );
 
   const contentClasses = classNames(
-    'max-w-screen-2xl py-10 px-6 mx-auto',
+    'max-w-screen-2xl px-6 mx-auto',
+    yPadding ? `py-${yPadding}` : 'py-10',
     textColor,
     className
   );

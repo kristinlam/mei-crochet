@@ -5,11 +5,7 @@ import FullPageLayout from '../layouts/FullPageLayout';
 
 const LoginPage = () => {
   return (
-    <FullPageLayout
-      centered
-      backgroundColor="bg-beige-100"
-      textColor="text-orange-300"
-    >
+    <FullPageLayout xCentered yPadding="20" textColor="text-orange-300">
       <h1 className="mb-8">Hi again!</h1>
       <Login />
       <div className="text-xl text-center">
