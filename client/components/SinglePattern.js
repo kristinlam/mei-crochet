@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePattern } from '../store/singlePattern';
+import { convertCents } from '../helpers';
 
 const SinglePattern = (props) => {
   const pattern = useSelector((state) => state.singlePattern);
@@ -8,14 +9,14 @@ const SinglePattern = (props) => {
 
   useEffect(() => {
     dispatch(getSinglePattern(props.match.params.id));
-  }, [dispatch]);
+  }, []);
 
   return (
-    <div>
-      <div key={pattern.id}>
+    <div className="max-w-screen-2xl flex px-4 md:px-8">
+      <img src={pattern.image} />
+      <div>
         <h1>{pattern.name}</h1>
-        <img src={pattern.image} />
-        <p>{pattern.price}</p>
+        <p>{pattern.price !== 0 ? convertCents(pattern.price) : 'Free'}</p>
         <p>{pattern.creator}</p>
         <p>{pattern.description}</p>
       </div>

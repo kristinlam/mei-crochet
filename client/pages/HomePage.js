@@ -4,21 +4,7 @@ import { getPatterns } from '../store/patterns';
 import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import Button from '../components/Button';
-
-// Generate random patterns
-function getRandom(arr, n) {
-  var result = new Array(n),
-    len = arr.length,
-    taken = new Array(len);
-  if (n > len)
-    throw new RangeError('getRandom: more elements taken than available');
-  while (n--) {
-    var x = Math.floor(Math.random() * len);
-    result[n] = arr[x in taken ? taken[x] : x];
-    taken[x] = --len in taken ? taken[len] : len;
-  }
-  return result;
-}
+import { getRandom } from '../helpers';
 
 const colors = ['bg-green-100', 'bg-pink-300', 'bg-orange-100'];
 
@@ -30,10 +16,7 @@ const Home = () => {
     dispatch(getPatterns());
   }, []);
 
-  let featuredPatterns = [];
-  if (patterns.length > 0) {
-    featuredPatterns = getRandom(patterns, 3);
-  }
+  const featuredPatterns = patterns.length > 0 ? getRandom(patterns, 3) : [];
 
   return (
     <div>
@@ -78,7 +61,7 @@ const Home = () => {
       <Section backgroundColor="bg-yellow" textColor="text-orange-300">
         <h2 className="mb-12">Patterns</h2>
         <div className="max-w-screen-2xl flex flex-col md:flex-row gap-x-6 xl:gap-x-12">
-          {featuredPatterns?.map((pattern, el) => (
+          {featuredPatterns.map((pattern, el) => (
             <div
               key={pattern.id}
               className={`${colors[el]} p-5 flex-1 rounded-md mb-4 sm:mb-6 lg:mb-0`}

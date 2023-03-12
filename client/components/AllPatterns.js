@@ -2,14 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPatterns } from '../store/patterns';
 import { Link } from 'react-router-dom';
-
-function convertCents(cents) {
-  let dollars = cents / 100;
-  return dollars.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-}
+import { convertCents } from '../helpers';
 
 const AllPatterns = () => {
   const patterns = useSelector((state) => state.patterns);
