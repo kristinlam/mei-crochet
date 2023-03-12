@@ -83,6 +83,8 @@ async function seed() {
       description:
         'Designed to be extra oversized, this scarf will blanket you in so much coziness this winter. The word Duille [dil-a] is Irish and translates to “leaf” in English.',
       link: 'https://www.crochetwithcarrie.com/crochet-duille-scarf/',
+      image:
+        'https://www.crochetwithcarrie.com/wp-content/uploads/2022/01/crochet-scarf.jpg',
       price: 0,
     },
     {
