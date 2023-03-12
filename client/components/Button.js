@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 const Button = ({ children, backgroundColor, textColor, border, ...rest }) => {
   const classes = classNames(
-    'drop-shadow-[6px_6px_rgb(244,122,59)] rounded-full',
+    'font-serif drop-shadow-[6px_6px_rgb(244,122,59)] rounded-full px-4 py-3',
     backgroundColor,
     textColor,
     border ? `border-${border}` : '',

@@ -9,7 +9,7 @@ const FullScreenCenteredDivLayout = ({
   ...rest
 }) => {
   const classes = classNames(
-    'h-screen flex flex-col items-center justify-center',
+    'min-h-screen flex flex-col items-center justify-center',
     backgroundColor,
     textColor,
     rest.className
