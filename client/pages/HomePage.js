@@ -22,14 +22,14 @@ const Home = () => {
     <div>
       <header className="bg-[url('/images/header.jpg')] bg-center bg-cover">
         <div className="h-[50vh] lg:h-[75vh] flex flex-col justify-center items-center text-center">
-          <h1 className="sm:text-7xl md:text-8xl lg:text-9xl textstroke text-yellow mb-12 drop-shadow-[11px_11px_rgb(244,122,59)] ">
+          <h1 className="sm:text-7xl md:text-8xl lg:text-9xl textstroke text-yellow-200 mb-12 drop-shadow-[11px_11px_rgb(244,122,59)] ">
             Mei Crochet
           </h1>
           <Button
-            backgroundColor="bg-yellow"
+            backgroundColor="bg-yellow-200"
             textColor="text-orange-200"
             border="2"
-            className="inline-block"
+            className="inline-block px-6 py-4"
           >
             <Link className="text-2xl" to="/shop">
               Shop All
@@ -58,7 +58,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Section backgroundColor="bg-yellow" textColor="text-orange-300">
+      <Section backgroundColor="bg-yellow-100" textColor="text-orange-300">
         <h2 className="mb-12">Patterns</h2>
         <div className="max-w-screen-2xl flex flex-col md:flex-row gap-x-6 xl:gap-x-12">
           {featuredPatterns.map((pattern, el) => (

@@ -13,7 +13,7 @@ const PatternsPage = () => {
   }, []);
 
   return (
-    <div className="bg-yellow">
+    <div className="bg-yellow-100">
       <div className="py-10 px-6">
         <h1 className="text-orange-300 text-center mb-16">All Patterns</h1>
 
