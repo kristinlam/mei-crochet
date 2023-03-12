@@ -9,8 +9,8 @@ import PatternsPage from './pages/PatternsPage';
 import SinglePatternPage from './pages/SinglePatternPage';
 import CartPage from './pages/CartPage';
 import AccountPage from './pages/AccountPage';
-import UserDashboard from './components/admin/UserDashboard';
-import PatternDashboard from './components/admin/PatternDashboard';
+import UserControlPage from './pages/admin/UserControlPage';
+import PatternControlPage from './pages/admin/PatternControlPage';
 
 class Routes extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class Routes extends Component {
   }
 
   render() {
-    const { isLoggedIn } = this.props;
+    const { isLoggedIn, isAdmin } = this.props;
 
     return (
       <div>
@@ -34,11 +34,12 @@ class Routes extends Component {
             {isLoggedIn ? <Redirect to="/account" /> : <SignupPage />}
           </Route>
         </Switch>
+
         {isLoggedIn && (
           <Switch>
             <Route path="/account" component={AccountPage} />
-            <Route path="/admin/users" component={UserDashboard} />
-            <Route path="/admin/patterns" component={PatternDashboard} />
+            <Route path="/admin/users" component={UserControlPage} />
+            <Route path="/admin/patterns" component={PatternControlPage} />
           </Switch>
         )}
       </div>

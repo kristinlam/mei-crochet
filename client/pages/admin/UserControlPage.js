@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getUsers } from '../../store/users';
 
-const UserDashboard = () => {
+const UserControlPage = () => {
   const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
 
@@ -25,4 +25,4 @@ const UserDashboard = () => {
   );
 };
 
-export default UserDashboard;
+export default UserControlPage;

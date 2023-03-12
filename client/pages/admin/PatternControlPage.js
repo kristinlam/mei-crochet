@@ -1,7 +1,7 @@
 import React from 'react';
 
-const PatternDashboard = () => {
+const PatternControlPage = () => {
   return <div>Pattern Dashboard</div>;
 };
 
-export default PatternDashboard;
+export default PatternControlPage;
