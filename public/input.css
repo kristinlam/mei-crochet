@@ -9,11 +9,12 @@
 
 @layer base {
   body {
-    font-family: 'Corben';
+    @apply font-serif;
   }
 
-  p {
-    font-family: 'Manrope';
+  p,
+  a:link {
+    @apply font-sans;
   }
 
   h1 {

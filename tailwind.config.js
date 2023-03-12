@@ -26,8 +26,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      sans: ['Manrope', 'sans-serif'],
+      serif: ['Corben', 'serif'],
     },
     extend: {
       animation: {
