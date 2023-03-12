@@ -56,7 +56,7 @@ const Home = () => {
       </header>
       <div className="bg-green-200 text-beige-200">
         <div className="relative flex overflow-x-hidden">
-          <div className="py-6 animate-marquee whitespace-nowrap">
+          <div className="font-serif py-6 animate-marquee whitespace-nowrap">
             <span className="text-4xl mx-4">Find your next project.</span>
             <span className="text-4xl mx-4">Support pattern designers.</span>
             <span className="text-4xl mx-4">Crochet the day away.</span>
@@ -65,7 +65,7 @@ const Home = () => {
             <span className="text-4xl mx-4">Crochet the day away.</span>
           </div>
 
-          <div className="py-6 absolute top-0 animate-marquee2 whitespace-nowrap">
+          <div className="font-serif py-6 absolute top-0 animate-marquee2 whitespace-nowrap">
             <span className="text-4xl mx-4">Find your next project.</span>
             <span className="text-4xl mx-4">Support pattern designers.</span>
             <span className="text-4xl mx-4">Crochet the day away.</span>

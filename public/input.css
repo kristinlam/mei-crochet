@@ -9,19 +9,14 @@
 
 @layer base {
   body {
-    @apply font-serif;
-  }
-
-  p,
-  a:link {
     @apply font-sans;
   }
 
   h1 {
-    @apply text-6xl font-bold;
+    @apply font-bold font-serif text-6xl;
   }
 
   h2 {
-    @apply text-5xl font-bold;
+    @apply font-serif font-bold text-5xl;
   }
 }
