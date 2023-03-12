@@ -5,18 +5,13 @@ module.exports = {
     colors: {
       black: '#232323',
       white: '#FFFFFF',
-      yellow: {
-        100: '#fef1c3',
-        200: '#F4DE91',
-      },
       beige: {
         100: '#F8F3DA',
         200: '#F6E4C3',
       },
-      pink: {
-        100: '#F3C9B2',
-        200: '#FCB0B1',
-        300: '#F2789B',
+      yellow: {
+        100: '#fef1c3',
+        200: '#F4DE91',
       },
       orange: {
         100: '#FCA824',
@@ -26,6 +21,14 @@ module.exports = {
       green: {
         100: '#C3B000',
         200: '#ADB05A',
+        300: '#575726', // new
+      },
+      brown: {
+        100: '#CE6f33', // new
+      },
+      pink: {
+        100: '#F2789B',
+        200: '#E06E84', // new
       },
     },
     fontFamily: {
