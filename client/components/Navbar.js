@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { logout } from '../store';
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
-  <nav className="bg-beige-200 uppercase text-green-200 border-b-2 px-6 py-4">
+  <nav className="font-serif text-green-200 bg-beige-200 border-b-2 px-6 py-4">
     {isLoggedIn ? (
       <div className="flex flex-row items-center justify-between">
         <div className="flex-1 flex gap-x-10 items-end">
