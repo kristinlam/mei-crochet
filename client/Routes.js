@@ -33,11 +33,13 @@ class Routes extends Component {
           <Route path="/signup">
             {isLoggedIn ? <Redirect to="/account" /> : <SignupPage />}
           </Route>
+          <Route path="/account">
+            {!isLoggedIn ? <Redirect to="/login" /> : <AccountPage />}
+          </Route>
         </Switch>
 
         {isLoggedIn && (
           <Switch>
-            <Route path="/account" component={AccountPage} />
             <Route path="/admin/users" component={UserControlPage} />
             <Route path="/admin/patterns" component={PatternControlPage} />
           </Switch>
