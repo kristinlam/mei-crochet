@@ -1,10 +1,11 @@
 import React from 'react';
+import FullPageLayout from '../layouts/FullPageLayout';
 
 const CartPage = () => {
   return (
-    <div>
+    <FullPageLayout>
       <h1>Cart</h1>
-    </div>
+    </FullPageLayout>
   );
 };
 

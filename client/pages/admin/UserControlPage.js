@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getUsers } from '../../store/users';
+import FullPageLayout from '../../layouts/FullPageLayout';
 
 const UserControlPage = () => {
   const users = useSelector((state) => state.users);
@@ -12,7 +13,7 @@ const UserControlPage = () => {
   }, []);
 
   return (
-    <div>
+    <FullPageLayout>
       <h1>User Dashboard</h1>
       {users.map((user) => (
         <div key={user.id}>
@@ -21,7 +22,7 @@ const UserControlPage = () => {
           <p>Account Type: {user.isAdmin ? 'Admin' : 'User'}</p>
         </div>
       ))}
-    </div>
+    </FullPageLayout>
   );
 };
 

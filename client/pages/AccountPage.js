@@ -2,17 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../store';
+import FullPageLayout from '../layouts/FullPageLayout';
 import Button from '../components/Button.js';
 
 const AccountPage = ({ handleClick, isLoggedIn, isAdmin, username }) => {
   return (
-    <div>
+    <FullPageLayout>
       <h1>Hello, {username}</h1>
 
       {isAdmin ? (
         <div>
-          <Link to="/admin/users">Users</Link>
-          <Link to="/admin/patterns">Patterns</Link>
+          <Link className="underline" to="/admin/users">
+            Users
+          </Link>
+          <Link className="underline" to="/admin/patterns">
+            Patterns
+          </Link>
         </div>
       ) : (
         'You are not an admin. Show account info and order history.'
@@ -27,7 +32,7 @@ const AccountPage = ({ handleClick, isLoggedIn, isAdmin, username }) => {
           Logout
         </a>
       </Button>
-    </div>
+    </FullPageLayout>
   );
 };
 

@@ -1,7 +1,8 @@
 import React from 'react';
+import FullPageLayout from '../../layouts/FullPageLayout';
 
 const PatternControlPage = () => {
-  return <div>Pattern Dashboard</div>;
+  return <FullPageLayout>Pattern Dashboard</FullPageLayout>;
 };
 
 export default PatternControlPage;
