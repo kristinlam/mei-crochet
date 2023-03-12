@@ -17,7 +17,7 @@
   }
 
   h1 {
-    @apply text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold;
+    @apply text-6xl font-bold;
   }
 
   h2 {

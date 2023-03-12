@@ -6,7 +6,10 @@ module.exports = {
       black: '#232323',
       white: '#FFFFFF',
       yellow: '#F4DE91',
-      beige: '#F6E4C3',
+      beige: {
+        100: '#F8F3DA',
+        200: '#F6E4C3',
+      },
       pink: {
         100: '#F3C9B2',
         200: '#FCB0B1',
