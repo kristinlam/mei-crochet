@@ -39,14 +39,14 @@ const Home = () => {
     <div>
       <header className="bg-[url('/images/header.jpg')] bg-center bg-cover">
         <div className="h-[50vh] lg:h-[75vh] flex flex-col justify-center items-center text-center">
-          <h1 className="textstroke text-yellow drop-shadow-[11px_11px_rgb(244,122,59)] mb-12">
+          <h1 className="sm:text-7xl md:text-8xl lg:text-9xl textstroke text-yellow mb-12 drop-shadow-[11px_11px_rgb(244,122,59)] ">
             Mei Crochet
           </h1>
           <Button
             backgroundColor="bg-yellow"
             textColor="text-orange-200"
             border="2"
-            className="inline-block px-6 py-4"
+            className="inline-block"
           >
             <Link className="text-2xl" to="/shop">
               Shop All
@@ -54,7 +54,7 @@ const Home = () => {
           </Button>
         </div>
       </header>
-      <div className="bg-green-200 text-beige">
+      <div className="bg-green-200 text-beige-200">
         <div className="relative flex overflow-x-hidden">
           <div className="py-6 animate-marquee whitespace-nowrap">
             <span className="text-4xl mx-4">Find your next project.</span>
