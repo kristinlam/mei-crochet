@@ -420,21 +420,18 @@ video {
 }
 
 body {
-  font-family: Corben, serif;
-}
-
-p,
-  a:link {
   font-family: Manrope, sans-serif;
 }
 
 h1 {
+  font-family: Corben, serif;
   font-size: 3.75rem;
   line-height: 1;
   font-weight: 700;
 }
 
 h2 {
+  font-family: Corben, serif;
   font-size: 3rem;
   line-height: 1;
   font-weight: 700;
@@ -641,16 +638,8 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .mb-8 {
   margin-bottom: 2rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .block {
@@ -941,6 +930,10 @@ h2 {
 
 .text-center {
   text-align: center;
+}
+
+.font-serif {
+  font-family: Corben, serif;
 }
 
 .text-2xl {
