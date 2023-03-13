@@ -7,8 +7,6 @@ import Button from '../components/Button';
 import { getRandom } from '../helpers';
 import { IoMdFlower } from 'react-icons/io';
 
-const colors = ['bg-green-100', 'bg-pink-100', 'bg-orange-100'];
-
 const Home = () => {
   const patterns = useSelector((state) => state.patterns);
   const dispatch = useDispatch();
@@ -23,12 +21,12 @@ const Home = () => {
     <div>
       <header className="bg-[url('/images/header.jpg')] bg-center bg-cover">
         <div className="h-[60vh] lg:h-[80vh] flex flex-col justify-center items-center text-center">
-          <h1 className="sm:text-7xl md:text-8xl lg:text-9xl textstroke text-yellow-200 mb-12 drop-shadow-[11px_11px_rgb(244,122,59)] ">
+          <h1 className="sm:text-7xl md:text-8xl lg:text-9xl textstroke text-yellow mb-12 drop-shadow-[11px_11px_rgb(230,90,10)]">
             Mei Crochet
           </h1>
           <Button
-            backgroundColor="bg-yellow-200"
-            textColor="text-orange-200"
+            backgroundColor="bg-yellow"
+            textColor="text-orange"
             border="2"
             className="inline-block px-6 py-4"
           >
@@ -38,7 +36,7 @@ const Home = () => {
           </Button>
         </div>
       </header>
-      <div className="bg-brown-100 text-beige-200">
+      <div className="bg-brown text-beige">
         <div className="relative flex overflow-x-hidden">
           <div className="font-serif text-3xl py-6 animate-marquee whitespace-nowrap">
             <span className="mx-4">Find your next project.</span>
@@ -71,17 +69,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Section backgroundColor="bg-beige-100" textColor="text-orange-300">
+      <Section backgroundColor="bg-beige" textColor="text-red">
         <div className="text-center mb-16">
           <h2 className="mb-6">Bust out the yarn</h2>
           <p className="text-2xl">What are you waiting for?</p>
         </div>
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 xl:gap-12 max-w-md lg:max-w-full">
           {featuredPatterns.map((pattern, el) => (
-            <div
-              key={pattern.id}
-              className={`${colors[el]} p-5 flex-1 rounded-md`}
-            >
+            <div key={pattern.id} className={'bg-red p-5 flex-1 rounded-md'}>
               <div>
                 <img
                   className="object-cover w-full aspect-square rounded"
@@ -93,27 +88,27 @@ const Home = () => {
         </div>
       </Section>
       <Section
-        className="py-32"
-        backgroundColor="bg-pink-200"
-        textColor="text-beige-100"
+        className="py-32 font-bold"
+        backgroundColor="bg-green"
+        textColor="text-beige"
       >
         <h2 className="mb-16">How it works</h2>
         <div className="text-2xl leading-9">
-          <div className="mb-14 flex">
+          <div className="mb-14 flex items-center">
             <span className="text-[4.5rem] font-bold mr-4">1</span>
             <p>
               Add items to your cart and checkout. No credit card needed, this
               site’s just for fun!
             </p>
           </div>
-          <div className="mb-14 flex">
+          <div className="mb-14 flex items-center">
             <span className="text-[4.5rem] font-bold mr-4">2</span>
             <p>
               Checkout and you’ll receive a summary of links to all the patterns
               you selected.
             </p>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <span className="text-[4.5rem] font-bold mr-4">3</span>
             <p>
               Visit the links if you'd like to purchase them for real. There are
