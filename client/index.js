@@ -4,14 +4,17 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import history from './history';
 import store from './store';
+import { CartProvider } from './context/cart';
 import App from './App';
 
 const container = document.getElementById('app');
 const root = createRoot(container);
 root.render(
   <Provider store={store}>
-    <Router history={history}>
-      <App />
-    </Router>
+    <CartProvider>
+      <Router history={history}>
+        <App />
+      </Router>
+    </CartProvider>
   </Provider>
 );
