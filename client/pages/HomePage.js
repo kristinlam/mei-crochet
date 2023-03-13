@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import { getRandom } from '../helpers';
+import { IoMdFlower } from 'react-icons/io';
 
 const colors = ['bg-green-100', 'bg-pink-100', 'bg-orange-100'];
 
@@ -41,20 +42,32 @@ const Home = () => {
         <div className="relative flex overflow-x-hidden">
           <div className="font-serif text-3xl py-6 animate-marquee whitespace-nowrap">
             <span className="mx-4">Find your next project.</span>
+            <span className="mx-4">
+              <IoMdFlower className="inline-block" />
+            </span>
             <span className="mx-4">Support pattern designers.</span>
+            <span className="mx-4">
+              <IoMdFlower className="inline-block" />
+            </span>
             <span className="mx-4">Crochet the day away.</span>
-            <span className="mx-4">Find your next project.</span>
-            <span className="mx-4">Support pattern designers.</span>
-            <span className="mx-4">Crochet the day away.</span>
+            <span className="mx-4">
+              <IoMdFlower className="inline-block" />
+            </span>
           </div>
 
           <div className="font-serif text-3xl py-6 absolute top-0 animate-marquee2 whitespace-nowrap">
             <span className="mx-4">Find your next project.</span>
+            <span className="mx-4">
+              <IoMdFlower className="inline-block" />
+            </span>
             <span className="mx-4">Support pattern designers.</span>
+            <span className="mx-4">
+              <IoMdFlower className="inline-block" />
+            </span>
             <span className="mx-4">Crochet the day away.</span>
-            <span className="mx-4">Find your next project.</span>
-            <span className="mx-4">Support pattern designers.</span>
-            <span className="mx-4">Crochet the day away.</span>
+            <span className="mx-4">
+              <IoMdFlower className="inline-block" />
+            </span>
           </div>
         </div>
       </div>
