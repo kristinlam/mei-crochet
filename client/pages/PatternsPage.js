@@ -28,10 +28,12 @@ const PatternsPage = () => {
         {patterns.map((pattern) => (
           <div key={pattern.id} className="text-center">
             <Link key={pattern.id} to={`/shop/${pattern.id}`}>
-              <img
-                className="object-cover w-full aspect-square rounded-2xl mb-4"
-                src={pattern.image}
-              />
+              <div className="w-full mb-4">
+                <img
+                  className="aspect-square object-cover rounded-2xl"
+                  src={pattern.image}
+                />
+              </div>
 
               <div className="mb-2">
                 <h3>{pattern.name}</h3>
