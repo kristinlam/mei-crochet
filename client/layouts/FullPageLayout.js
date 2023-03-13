@@ -6,7 +6,6 @@ const FullPageLayout = ({
   backgroundColor,
   textColor,
   xCentered,
-  yPadding,
   className,
 }) => {
   const containerClasses = classNames(
@@ -14,12 +13,11 @@ const FullPageLayout = ({
     {
       'flex flex-col items-center': xCentered,
     },
-    backgroundColor ? `bg-${backgroundColor}` : 'bg-beige'
+    backgroundColor ? backgroundColor : 'bg-beige'
   );
 
   const contentClasses = classNames(
-    'max-w-screen-2xl px-6 mx-auto',
-    yPadding ? `py-${yPadding}` : 'py-10',
+    'max-w-screen-2xl py-10 px-6 mx-auto',
     textColor,
     className
   );
