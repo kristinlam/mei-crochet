@@ -27,7 +27,7 @@ const Home = () => {
           <Button
             backgroundColor="bg-yellow"
             textColor="text-orange"
-            border="2"
+            border
             className="inline-block px-6 py-4"
           >
             <Link className="text-2xl" to="/shop">

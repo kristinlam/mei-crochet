@@ -23,7 +23,7 @@ const AccountPage = ({ handleClick, isLoggedIn, isAdmin, username }) => {
         'You are not an admin. Show account info and order history.'
       )}
 
-      <Button backgroundColor="bg-yellow" textColor="text-orange" border="2">
+      <Button backgroundColor="bg-yellow" textColor="text-orange" border>
         <a href="/login" onClick={handleClick}>
           Logout
         </a>

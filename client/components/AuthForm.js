@@ -31,7 +31,7 @@ const AuthForm = ({ name, displayName, handleSubmit, error }) => {
           <Button
             backgroundColor="bg-yellow"
             textColor="text-orange"
-            border="2"
+            border
             type="submit"
           >
             {displayName}

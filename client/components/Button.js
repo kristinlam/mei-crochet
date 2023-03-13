@@ -6,7 +6,7 @@ const Button = ({ children, backgroundColor, textColor, border, ...rest }) => {
     'font-serif drop-shadow-[6px_6px_rgb(230,90,10)] rounded-full px-4 py-3',
     backgroundColor,
     textColor,
-    border ? `border-${border}` : '',
+    border ? 'border-2' : '',
     rest.className
   );
   return (

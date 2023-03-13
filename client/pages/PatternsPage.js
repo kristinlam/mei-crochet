@@ -44,7 +44,7 @@ const PatternsPage = () => {
             <Button
               backgroundColor="bg-yellow"
               textColor="text-orange"
-              border="2"
+              border
               onClick={() => handleAddToCartClick(pattern)}
             >
               Add to cart
