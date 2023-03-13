@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartContext from '../context/cart';
+import { BsBagHeart } from 'react-icons/bs';
 
 const Navbar = ({ isLoggedIn }) => {
   const { cartItemQty } = useContext(CartContext);
@@ -21,7 +22,12 @@ const Navbar = ({ isLoggedIn }) => {
         ) : (
           <Link to="/login">Login</Link>
         )}
-        <Link to="/cart">Cart {cartItemQty}</Link>
+        <Link to="/cart">
+          <div className="flex items-center">
+            <BsBagHeart className="text-4xl inline-block mr-2" />
+            <p>{cartItemQty}</p>
+          </div>
+        </Link>
       </div>
     </nav>
   );
