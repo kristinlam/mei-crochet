@@ -72,13 +72,15 @@ const Home = () => {
         </div>
       </div>
       <Section backgroundColor="bg-beige-100" textColor="text-orange-300">
-        <h2 className="text-center mb-6">Bust out the yarn</h2>
-        <p className="text-2xl text-center mb-16">What are you waiting for?</p>
-        <div className="flex flex-col md:flex-row gap-x-6 xl:gap-x-12">
+        <div className="text-center mb-16">
+          <h2 className="mb-6">Bust out the yarn</h2>
+          <p className="text-2xl">What are you waiting for?</p>
+        </div>
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 xl:gap-12 max-w-md lg:max-w-full">
           {featuredPatterns.map((pattern, el) => (
             <div
               key={pattern.id}
-              className={`${colors[el]} p-5 flex-1 rounded-md mb-4 sm:mb-6 lg:mb-0`}
+              className={`${colors[el]} p-5 flex-1 rounded-md`}
             >
               <div>
                 <img
@@ -95,30 +97,28 @@ const Home = () => {
         backgroundColor="bg-pink-200"
         textColor="text-beige-100"
       >
-        <div>
-          <h2 className="mb-16">How it works</h2>
-          <div className="text-2xl leading-9">
-            <div className="mb-14 flex">
-              <span className="text-[4.5rem] font-bold mr-4">1</span>
-              <p>
-                Add items to your cart and checkout. No credit card needed, this
-                site’s just for fun!
-              </p>
-            </div>
-            <div className="mb-14 flex">
-              <span className="text-[4.5rem] font-bold mr-4">2</span>
-              <p>
-                Checkout and you’ll receive a summary of links to all the
-                crochet patterns you selected.
-              </p>
-            </div>
-            <div className="flex">
-              <span className="text-[4.5rem] font-bold mr-4">3</span>
-              <p>
-                Visit the links if you'd like to purchase them for real. There
-                are plenty of free patterns to enjoy too!
-              </p>
-            </div>
+        <h2 className="mb-16">How it works</h2>
+        <div className="text-2xl leading-9">
+          <div className="mb-14 flex">
+            <span className="text-[4.5rem] font-bold mr-4">1</span>
+            <p>
+              Add items to your cart and checkout. No credit card needed, this
+              site’s just for fun!
+            </p>
+          </div>
+          <div className="mb-14 flex">
+            <span className="text-[4.5rem] font-bold mr-4">2</span>
+            <p>
+              Checkout and you’ll receive a summary of links to all the patterns
+              you selected.
+            </p>
+          </div>
+          <div className="flex">
+            <span className="text-[4.5rem] font-bold mr-4">3</span>
+            <p>
+              Visit the links if you'd like to purchase them for real. There are
+              plenty of free patterns to enjoy too!
+            </p>
           </div>
         </div>
       </Section>
