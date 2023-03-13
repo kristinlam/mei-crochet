@@ -14,7 +14,7 @@ const FullPageLayout = ({
     {
       'flex flex-col items-center': xCentered,
     },
-    backgroundColor ? `bg-${backgroundColor}` : 'bg-beige-100'
+    backgroundColor ? `bg-${backgroundColor}` : 'bg-beige'
   );
 
   const contentClasses = classNames(

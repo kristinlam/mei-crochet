@@ -14,7 +14,7 @@ const AuthForm = ({ name, displayName, handleSubmit, error }) => {
         <div className="mb-2">
           <label htmlFor="username">Username</label>
           <input
-            className="w-full border border-2 p-2 rounded-md focus:outline-none focus:border-yellow-100"
+            className="w-full border border-2 p-2 rounded-md focus:outline-none focus:border-green"
             name="username"
             type="text"
           />
@@ -22,15 +22,15 @@ const AuthForm = ({ name, displayName, handleSubmit, error }) => {
         <div className="mb-4">
           <label htmlFor="password">Password</label>
           <input
-            className="w-full border border-2 p-2 rounded-md focus:outline-none focus:border-yellow-100"
+            className="w-full border border-2 p-2 rounded-md focus:outline-none focus:border-green"
             name="password"
             type="password"
           />
         </div>
         <div>
           <Button
-            backgroundColor="bg-yellow-200"
-            textColor="text-orange-200"
+            backgroundColor="bg-yellow"
+            textColor="text-orange"
             border="2"
             type="submit"
           >

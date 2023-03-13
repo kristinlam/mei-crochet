@@ -5,31 +5,13 @@ module.exports = {
     colors: {
       black: '#232323',
       white: '#FFFFFF',
-      beige: {
-        100: '#F8F3DA',
-        200: '#F6E4C3',
-      },
-      yellow: {
-        100: '#fef1c3',
-        200: '#F4DE91',
-      },
-      orange: {
-        100: '#FCA824',
-        200: '#F47A3B',
-        300: '#E95B0B',
-      },
-      green: {
-        100: '#C3B000',
-        200: '#ADB05A',
-        300: '#575726', // new
-      },
-      brown: {
-        100: '#CE6f33', // new
-      },
-      pink: {
-        100: '#F2789B',
-        200: '#E06E84', // new
-      },
+      beige: '#F8F3DA',
+      red: '#93032E',
+      orange: '#E95B0B',
+      yellow: '#F4DE91',
+      green: '#575726',
+      blue: '#202C59',
+      brown: '#CE6f33',
     },
     fontFamily: {
       sans: ['Manrope', 'sans-serif'],
@@ -37,8 +19,8 @@ module.exports = {
     },
     extend: {
       animation: {
-        marquee: 'marquee 30s linear infinite',
-        marquee2: 'marquee2 30s linear infinite',
+        marquee: 'marquee 20s linear infinite',
+        marquee2: 'marquee2 20s linear infinite',
       },
       keyframes: {
         marquee: {

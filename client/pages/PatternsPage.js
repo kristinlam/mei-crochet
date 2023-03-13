@@ -22,7 +22,7 @@ const PatternsPage = () => {
 
   return (
     <FullPageLayout>
-      <h1 className="text-orange-300 text-center mb-16">All Patterns</h1>
+      <h1 className="text-orange text-center mb-16">All Patterns</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
         {patterns.map((pattern) => (
@@ -42,8 +42,8 @@ const PatternsPage = () => {
               </div>
             </Link>
             <Button
-              backgroundColor="bg-yellow-200"
-              textColor="text-orange-200"
+              backgroundColor="bg-yellow"
+              textColor="text-orange"
               border="2"
               onClick={() => handleAddToCartClick(pattern)}
             >

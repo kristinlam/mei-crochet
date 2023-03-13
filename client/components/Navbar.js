@@ -8,7 +8,7 @@ const Navbar = ({ isLoggedIn }) => {
   const { cartItemQty } = useContext(CartContext);
 
   return (
-    <nav className="font-serif text-beige-100 bg-green-300 px-6 py-4 text-xl h-16 md:h-[4.5rem] flex flex-row items-center justify-between">
+    <nav className="font-serif text-beige bg-green px-6 py-4 text-xl h-16 md:h-[4.5rem] flex flex-row items-center justify-between">
       <div className="flex gap-x-10 items-center">
         <Link className="text-4xl" to="/">
           Mei Crochet
