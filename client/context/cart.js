@@ -4,6 +4,7 @@ const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [cartItemQty, setCartItemQty] = useState(0);
 
   // get items from local storage on load
   useEffect(() => {
@@ -14,11 +15,13 @@ const CartProvider = ({ children }) => {
   // update local storage whenever state changes
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    setCartItemQty(cartItems.length);
   }, [cartItems]);
 
   // cart methods
   const addItem = (item) => {
-    setCartItems([...cartItems, item]);
+    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (!existingItem) setCartItems([...cartItems, item]);
   };
 
   const removeItem = (item) => {
@@ -30,6 +33,7 @@ const CartProvider = ({ children }) => {
 
   const cartContextValues = {
     cartItems,
+    cartItemQty,
     addItem,
     removeItem,
   };
