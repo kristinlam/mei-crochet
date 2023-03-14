@@ -7,14 +7,17 @@ import { convertCents } from '../helpers';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 const CartPage = () => {
-  const { cartItems } = useContext(CartContext);
-  console.log('cartitems', cartItems);
+  const { cartItems, removeItem } = useContext(CartContext);
+
+  const handleRemoveItemClick = (item) => {
+    removeItem(item);
+  };
 
   const renderedCartItems = cartItems.map((item) => (
     <div key={item.id} className="flex border-b-2 border-orange py-8">
       <div>
         <Link to={`/shop/${item.id}`}>
-          <div className="flex items-center">
+          <div className="flex flex-grow items-center">
             <div className="max-w-[120px] mr-6">
               <img
                 className="w-full	aspect-square object-cover rounded-xl"
@@ -25,10 +28,15 @@ const CartPage = () => {
           </div>
         </Link>
       </div>
-      <div>
-        <p>{convertCents(item.price)}</p>
+      <div className="flex">
+        <div>
+          <p>{convertCents(item.price)}</p>
+        </div>
+        <AiOutlineCloseCircle
+          className="text-3xl cursor-pointer"
+          onClick={() => handleRemoveItemClick(item)}
+        />
       </div>
-      <AiOutlineCloseCircle className="text-3xl" />
     </div>
   ));
 
