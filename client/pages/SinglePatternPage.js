@@ -1,17 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePattern } from '../store/singlePattern';
+import CartContext from '../context/cart';
 import { convertCents } from '../helpers';
 import FullPageLayout from '../layouts/FullPageLayout';
 import Button from '../components/Button';
 
 const SinglePatternPage = (props) => {
+  const { addItem } = useContext(CartContext);
   const pattern = useSelector((state) => state.singlePattern);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getSinglePattern(props.match.params.id));
   }, []);
+
+  const handleAddToCartClick = (pattern) => {
+    addItem(pattern);
+  };
 
   return (
     <FullPageLayout productPage>
@@ -44,7 +50,11 @@ const SinglePatternPage = (props) => {
           <p className="text-lg">{pattern.description}</p>
         </div>
 
-        <Button className="w-full sm:w-2/5" border>
+        <Button
+          className="w-full sm:w-2/5"
+          border
+          onClick={() => handleAddToCartClick(pattern)}
+        >
           Add to cart
         </Button>
       </div>

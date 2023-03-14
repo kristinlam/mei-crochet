@@ -8,7 +8,7 @@ import FullPageLayout from '../layouts/FullPageLayout';
 import Button from '../components/Button';
 
 const PatternsPage = () => {
-  const { cartItems, addItem } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
   const patterns = useSelector((state) => state.patterns);
   const dispatch = useDispatch();
 
