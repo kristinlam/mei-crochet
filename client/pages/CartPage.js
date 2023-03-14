@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import CartContext from '../context/cart';
 import FullPageLayout from '../layouts/FullPageLayout';
 import CartItem from '../components/CartItem';
@@ -13,7 +13,9 @@ const CartPage = () => {
       <div className="mb-2">
         <p className="text-2xl">Total: {calculatePrice()}</p>
       </div>
-      <Button border>Checkout</Button>
+      <Link to="/checkout">
+        <Button border>Checkout</Button>
+      </Link>
     </div>
   );
 
