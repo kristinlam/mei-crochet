@@ -7,6 +7,7 @@ const FullPageLayout = ({
   textColor,
   xCentered,
   productPage,
+  cartPage,
   className,
 }) => {
   const containerClasses = classNames(
@@ -18,10 +19,11 @@ const FullPageLayout = ({
   );
 
   const contentClasses = classNames(
-    'max-w-screen-2xl py-10 px-6 mx-auto',
+    'py-10 px-6 mx-auto',
     {
-      'max-w-screen-2xl py-10 px-6 sm:px-12 mx-auto flex flex-col lg:flex-row':
-        productPage,
+      'sm:px-12 flex flex-col lg:flex-row': productPage,
+      'max-w-5xl sm:px-14': cartPage,
+      'max-w-7xl': !cartPage && !productPage,
     },
     textColor,
     className
