@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePattern } from '../store/singlePattern';
 import { convertCents } from '../helpers';
-import ProductListingLayout from '../layouts/ProductListingLayout';
+import FullPageLayout from '../layouts/FullPageLayout';
 import Button from '../components/Button';
 
 const SinglePatternPage = (props) => {
@@ -14,7 +14,7 @@ const SinglePatternPage = (props) => {
   }, []);
 
   return (
-    <ProductListingLayout>
+    <FullPageLayout productPage>
       <div className="lg:flex-1">
         <img
           className="w-full aspect-square object-cover rounded-2xl"
@@ -48,7 +48,7 @@ const SinglePatternPage = (props) => {
           Add to cart
         </Button>
       </div>
-    </ProductListingLayout>
+    </FullPageLayout>
   );
 };
 
