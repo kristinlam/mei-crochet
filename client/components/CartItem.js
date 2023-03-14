@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { convertCents } from '../helpers';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-const CartItem = ({ key, item }) => {
+const CartItem = ({ item }) => {
   const { cartItems, removeItem, calculatePrice } = useContext(CartContext);
 
   const handleRemoveItemClick = (item) => {
@@ -15,7 +15,7 @@ const CartItem = ({ key, item }) => {
     <div className="flex border-b-2 border-green py-6">
       <div className="basis-9/12">
         <div className="flex items-center">
-          <Link to={`/shop/${key}`}>
+          <Link to={`/shop/${item.id}`}>
             <div className="w-28 sm:w-32">
               <img
                 className="w-full	aspect-square object-cover rounded-xl"
