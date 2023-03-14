@@ -16,8 +16,8 @@ const PatternsPage = () => {
     dispatch(getPatterns());
   }, []);
 
-  const handleAddToCartClick = (pattern) => {
-    addItem(pattern);
+  const handleAddToCartClick = (item) => {
+    addItem(item);
   };
 
   return (

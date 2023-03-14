@@ -15,8 +15,8 @@ const SinglePatternPage = (props) => {
     dispatch(getSinglePattern(props.match.params.id));
   }, []);
 
-  const handleAddToCartClick = (pattern) => {
-    addItem(pattern);
+  const handleAddToCartClick = (item) => {
+    addItem(item);
   };
 
   return (
