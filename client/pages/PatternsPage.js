@@ -43,12 +43,7 @@ const PatternsPage = () => {
                 </p>
               </div>
             </Link>
-            <Button
-              backgroundColor="bg-yellow"
-              textColor="text-orange"
-              border
-              onClick={() => handleAddToCartClick(pattern)}
-            >
+            <Button border onClick={() => handleAddToCartClick(pattern)}>
               Add to cart
             </Button>
           </div>

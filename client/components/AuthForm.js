@@ -28,12 +28,7 @@ const AuthForm = ({ name, displayName, handleSubmit, error }) => {
           />
         </div>
         <div>
-          <Button
-            backgroundColor="bg-yellow"
-            textColor="text-orange"
-            border
-            type="submit"
-          >
+          <Button border type="submit">
             {displayName}
           </Button>
         </div>
