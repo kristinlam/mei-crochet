@@ -21,10 +21,10 @@ const Home = () => {
     <div>
       <header className="bg-[url('/images/header.jpg')] bg-center bg-cover">
         <div className="h-[60vh] lg:h-[80vh] flex flex-col justify-center items-center text-center">
-          <h1 className="sm:text-7xl md:text-8xl lg:text-9xl textstroke text-yellow mb-12 drop-shadow-[11px_11px_rgb(230,90,10)]">
+          <h1 className="sm:text-7xl md:text-8xl lg:text-9xl textstroke text-yellow mb-12 drop-shadow-orange-sm md:drop-shadow-orange-md lg:drop-shadow-orange-lg">
             Mei Crochet
           </h1>
-          <Button border className="inline-block px-6 py-4">
+          <Button border className="px-6 py-4">
             <Link className="text-2xl" to="/shop">
               Shop All
             </Link>

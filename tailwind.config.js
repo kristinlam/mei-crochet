@@ -12,12 +12,18 @@ module.exports = {
       green: '#575726',
       blue: '#202C59',
       brown: '#CE6f33',
+      purple: '#6153CC',
     },
     fontFamily: {
       sans: ['Manrope', 'sans-serif'],
       serif: ['Corben', 'serif'],
     },
     extend: {
+      dropShadow: {
+        'orange-sm': '5px 5px rgba(230, 90, 10,1)',
+        'orange-md': '8px 8px rgba(230, 90, 10,1)',
+        'orange-lg': '11px 11px rgba(230,90,10,1)',
+      },
       animation: {
         marquee: 'marquee 20s linear infinite',
         marquee2: 'marquee2 20s linear infinite',

@@ -1,12 +1,20 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Button = ({ children, backgroundColor, textColor, border, ...rest }) => {
+const Button = ({
+  children,
+  backgroundColor,
+  textColor,
+  border,
+  dropShadow,
+  ...rest
+}) => {
   const classes = classNames(
-    'font-serif drop-shadow-[6px_6px_rgb(230,90,10)] rounded-full px-4 py-3',
-    (backgroundColor ||= 'bg-yellow'),
-    (textColor ||= 'text-orange'),
-    border ? 'border-2' : '',
+    'font-serif rounded-full px-4 py-3',
+    backgroundColor || 'bg-yellow',
+    textColor || 'text-orange',
+    border && 'border-2',
+    dropShadow || 'drop-shadow-orange-sm',
     rest.className
   );
   return (
