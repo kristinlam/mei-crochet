@@ -14,26 +14,31 @@ const CartPage = () => {
   };
 
   const renderedCartItems = cartItems.map((item) => (
-    <div key={item.id} className="flex border-b-2 border-orange py-8">
-      <div>
-        <Link to={`/shop/${item.id}`}>
-          <div className="flex flex-grow items-center">
-            <div className="max-w-[120px] mr-6">
+    <div key={item.id} className="flex border-b-2 border-green py-8">
+      <div className="basis-9/12">
+        <div className="flex items-center">
+          <Link to={`/shop/${item.id}`}>
+            <div className="w-28 sm:w-32">
               <img
                 className="w-full	aspect-square object-cover rounded-xl"
                 src={item.image}
               />
             </div>
-            <p className="font-serif font-bold text-2xl">{item.name}</p>
+          </Link>
+
+          <div className="px-6">
+            <Link to={`/shop/${item.id}`}>
+              <p className="font-serif font-bold text-xl sm:text-2xl">
+                {item.name}
+              </p>
+            </Link>
           </div>
-        </Link>
-      </div>
-      <div className="flex">
-        <div>
-          <p>{convertCents(item.price)}</p>
         </div>
+      </div>
+      <div className="flex grow items-center justify-between space-x-6">
+        <p className="text-xl sm:text-2xl">{convertCents(item.price)}</p>
         <AiOutlineCloseCircle
-          className="text-3xl cursor-pointer"
+          className="self-start text-2xl sm:text-3xl cursor-pointer"
           onClick={() => handleRemoveItemClick(item)}
         />
       </div>
@@ -44,7 +49,7 @@ const CartPage = () => {
     <FullPageLayout cartPage>
       <h1 className="text-orange text-center mb-16">Your Cart</h1>
 
-      <div className="border-b-4 border-orange mb-6">{renderedCartItems}</div>
+      <div className="border-b-4 border-green mb-6">{renderedCartItems}</div>
 
       <div className="flex flex-col items-end">
         <div className="mb-2">
