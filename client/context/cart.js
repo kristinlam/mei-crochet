@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { convertCents } from '../helpers';
 
 const CartContext = createContext();
 
@@ -31,11 +32,20 @@ const CartProvider = ({ children }) => {
     setCartItems(updatedItems);
   };
 
+  const calculatePrice = () => {
+    const totalCents = cartItems.reduce(
+      (totalPrice, item) => totalPrice + item.price,
+      0
+    );
+    return convertCents(totalCents);
+  };
+
   const cartContextValues = {
     cartItems,
     cartItemQty,
     addItem,
     removeItem,
+    calculatePrice,
   };
 
   return (
