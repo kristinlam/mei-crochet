@@ -13,6 +13,8 @@ export function getRandom(arr, n) {
 }
 
 export function convertCents(cents) {
+  if (cents === 0) return 'Free';
+
   let dollars = cents / 100;
   return dollars.toLocaleString('en-US', {
     style: 'currency',

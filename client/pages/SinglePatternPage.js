@@ -37,7 +37,7 @@ const SinglePatternPage = (props) => {
           </div>
           <div>
             <p className="text-4xl leading-snug font-bold font-serif">
-              {pattern.price !== 0 ? convertCents(pattern.price) : 'Free'}
+              {convertCents(pattern.price)}
             </p>
           </div>
         </div>

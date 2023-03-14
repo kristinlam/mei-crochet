@@ -38,9 +38,7 @@ const PatternsPage = () => {
               <div className="mb-2">
                 <h3>{pattern.name}</h3>
                 <p>{pattern.creator}</p>
-                <p>
-                  {pattern.price !== 0 ? convertCents(pattern.price) : 'Free'}
-                </p>
+                <p>{convertCents(pattern.price)}</p>
               </div>
             </Link>
             <Button border onClick={() => handleAddToCartClick(pattern)}>
