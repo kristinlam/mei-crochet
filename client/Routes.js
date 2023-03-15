@@ -9,6 +9,7 @@ import PatternsPage from './pages/PatternsPage';
 import SinglePatternPage from './pages/SinglePatternPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
+import ConfirmationPage from './pages/ConfirmationPage';
 import AccountPage from './pages/AccountPage';
 import UserControlPage from './pages/admin/UserControlPage';
 import PatternControlPage from './pages/admin/PatternControlPage';
@@ -29,6 +30,7 @@ class Routes extends Component {
           <Route path="/shop/:id" component={SinglePatternPage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/checkout" component={CheckoutPage} />
+          <Route path="/confirmation" component={ConfirmationPage} />
           <Route path="/login">
             {isLoggedIn ? <Redirect to="/account" /> : <LoginPage />}
           </Route>

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import FullPageLayout from '../layouts/FullPageLayout';
 import Button from '../components/Button';
 
@@ -10,7 +11,9 @@ const CheckoutPage = () => {
         <div>
           <p>Order summary here.</p>
         </div>
-        <Button border>Place your order</Button>
+        <Link to="/confirmation">
+          <Button border>Place your order</Button>
+        </Link>
       </div>
     </FullPageLayout>
   );
