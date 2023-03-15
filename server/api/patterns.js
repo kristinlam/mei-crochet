@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {
   models: { Pattern },
 } = require('../db');
+const { requireToken, isAdmin } = require('./middleware');
 
 module.exports = router;
 
@@ -27,7 +28,7 @@ router.get('/:id', async (req, res, next) => {
 
 // Admin Routes
 // POST /api/patterns/
-router.post('/', async (req, res, next) => {
+router.post('/', requireToken, isAdmin, async (req, res, next) => {
   try {
     res.status(201).json(await Pattern.create(req.body));
   } catch (err) {
@@ -36,17 +37,17 @@ router.post('/', async (req, res, next) => {
 });
 
 // PUT /api/patterns/:id
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', requireToken, isAdmin, async (req, res, next) => {
   try {
     const pattern = await Pattern.findByPk(req.params.id);
     res.json(await pattern.update(req.body));
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 });
 
 // DELETE /api/patterns/:id
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', requireToken, isAdmin, async (req, res, next) => {
   try {
     const pattern = await Pattern.findByPk(req.params.id);
     await pattern.destroy();
