@@ -2,12 +2,17 @@
 
 const {
   db,
-  models: { User, Pattern },
+  models: { User, Pattern, Order },
 } = require('../server/db');
 
 const users = [
   { username: 'a', password: 'a', isAdmin: true },
   { username: 'u', password: 'u' },
+];
+
+const orders = [
+  { isFulfilled: true, totalCost: 2500 },
+  { isFulfilled: false, totalCost: 0 },
 ];
 
 const patterns = [
@@ -94,16 +99,13 @@ async function seed() {
   await db.sync({ force: true });
   console.log('db synced!');
 
-  const [admin, user] = await Promise.all(
-    users.map((user) => User.create(user))
-  );
-
-  const createdPatterns = await Promise.all(
-    patterns.map((pattern) => Pattern.create(pattern))
-  );
+  await Promise.all(users.map((user) => User.create(user)));
+  await Promise.all(patterns.map((pattern) => Pattern.create(pattern)));
+  await Promise.all(orders.map((order) => Order.create(order)));
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded ${patterns.length} patterns`);
+  console.log(`seeded ${orders.length} orders`);
   console.log(`seeded successfully`);
 }
 
