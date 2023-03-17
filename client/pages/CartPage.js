@@ -1,21 +1,33 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CartContext from '../context/cart';
 import FullPageLayout from '../layouts/FullPageLayout';
 import CartItem from '../components/CartItem';
 import Button from '../components/Button';
-import { Link } from 'react-router-dom';
 
 const CartPage = () => {
   const { cartItems, calculatePrice } = useContext(CartContext);
 
+  const history = useHistory();
+
+  const handleCheckout = () => {
+    history.push({
+      pathname: '/confirmation',
+      state: { cartItems },
+    });
+  };
+
   const checkoutInfo = (
     <div className="flex flex-col items-end">
       <div className="mb-2">
-        <p className="text-2xl">Total: {calculatePrice()}</p>
+        <p className="text-2xl">
+          Total: {'Calculating...' && calculatePrice()}
+        </p>
       </div>
-      <Link to="/checkout">
-        <Button border>Checkout</Button>
-      </Link>
+      <Button onClick={handleCheckout} border>
+        Checkout
+      </Button>
     </div>
   );
 
