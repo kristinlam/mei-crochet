@@ -5,7 +5,7 @@ import { convertCents } from '../helpers';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 const CartItem = ({ item }) => {
-  const { cartItems, removeItem, calculatePrice } = useContext(CartContext);
+  const { removeItem } = useContext(CartContext);
 
   const handleRemoveItemClick = (item) => {
     removeItem(item);
