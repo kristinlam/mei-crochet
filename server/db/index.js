@@ -3,7 +3,7 @@ const db = require('./db');
 const User = require('./models/User');
 const Pattern = require('./models/Pattern');
 const Order = require('./models/Order');
-const OrderPattern = require('./models/OrderPattern');
+const OrderPattern = db.define('order_pattern', {});
 
 // associations
 User.hasMany(Order);
