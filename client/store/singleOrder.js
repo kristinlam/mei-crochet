@@ -9,9 +9,12 @@ const _createOrder = (order) => {
   };
 };
 
-export const createOrder = (order) => {
+export const createOrder = (cartItems, totalCost) => {
   return async (dispatch) => {
-    const { data: newOrder } = await axios.post('/api/orders', order);
+    const { data: newOrder } = await axios.post('/api/orders', {
+      cartItems,
+      totalCost,
+    });
     dispatch(_createOrder(newOrder));
   };
 };
