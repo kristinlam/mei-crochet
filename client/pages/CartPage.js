@@ -2,19 +2,20 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import CartContext from '../context/cart';
+import { convertCents } from '../helpers';
 import FullPageLayout from '../layouts/FullPageLayout';
 import CartItem from '../components/CartItem';
 import Button from '../components/Button';
 
 const CartPage = () => {
   const { cartItems, calculatePrice } = useContext(CartContext);
-
   const history = useHistory();
+  const totalPrice = calculatePrice();
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     history.push({
       pathname: '/confirmation',
-      state: { cartItems },
+      state: { cartItems, totalPrice },
     });
   };
 
@@ -22,7 +23,7 @@ const CartPage = () => {
     <div className="flex flex-col items-end">
       <div className="mb-2">
         <p className="text-2xl">
-          Total: {'Calculating...' && calculatePrice()}
+          Total: {'Calculating...' && convertCents(totalPrice)}
         </p>
       </div>
       <Button onClick={handleCheckout} border>
