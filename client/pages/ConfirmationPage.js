@@ -1,15 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import CartContext from '../context/cart';
+import { useDispatch } from 'react-redux';
+import { createOrder } from '../store/singleOrder';
 import FullPageLayout from '../layouts/FullPageLayout';
-import Button from '../components/Button';
 
-const ConfirmationPage = () => {
-  // clear cartItems in state and local storage
-  const { cartItems } = useContext(CartContext);
+const ConfirmationPage = (props) => {
+  const { cartItems, totalPrice } = props.location.state;
+  const dispatch = useDispatch();
+
+  const { setCartItems } = useContext(CartContext);
+
+  useEffect(() => {
+    dispatch(createOrder(cartItems, totalPrice));
+
+    // update state, auto clears local storage
+    setCartItems([]);
+  }, []);
 
   const renderedCartItems = cartItems.map((item) => (
-    <div>
+    <div key={item.id}>
       <p>{item.name}</p>
+      <p>{item.link}</p>
     </div>
   ));
 
@@ -22,10 +33,8 @@ const ConfirmationPage = () => {
           Check out the talented artists featured on this site and support them
           by buying their patterns through the links below!
         </p>
-        {/* <Button border>Download PDF</Button> */}
+        {renderedCartItems}
       </div>
-
-      <div>{renderedCartItems}</div>
     </FullPageLayout>
   );
 };
