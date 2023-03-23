@@ -31,6 +31,10 @@ const CartProvider = ({ children }) => {
     setCartItems(updatedItems);
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const calculatePrice = () => {
     const totalCents = cartItems.reduce(
       (totalPrice, item) => totalPrice + item.price,
@@ -45,6 +49,7 @@ const CartProvider = ({ children }) => {
     cartItemQty,
     addItem,
     removeItem,
+    clearCart,
     calculatePrice,
   };
 

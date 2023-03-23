@@ -6,15 +6,12 @@ import FullPageLayout from '../layouts/FullPageLayout';
 
 const ConfirmationPage = (props) => {
   const { cartItems, totalPrice } = props.location.state;
+  const { clearCart } = useContext(CartContext);
   const dispatch = useDispatch();
-
-  const { setCartItems } = useContext(CartContext);
 
   useEffect(() => {
     dispatch(createOrder(cartItems, totalPrice));
-
-    // update state, auto clears local storage
-    setCartItems([]);
+    clearCart();
   }, []);
 
   const renderedCartItems = cartItems.map((item) => (
