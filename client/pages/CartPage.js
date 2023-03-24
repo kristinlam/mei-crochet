@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useHistory, Link } from 'react-router-dom';
+import { createOrder } from '../store/singleOrder';
 import CartContext from '../context/cart';
 import { convertCents } from '../helpers';
 import FullPageLayout from '../layouts/FullPageLayout';
@@ -8,15 +9,18 @@ import CartItem from '../components/CartItem';
 import Button from '../components/Button';
 
 const CartPage = () => {
-  const { cartItems, calculatePrice } = useContext(CartContext);
+  const { cartItems, calculatePrice, clearCart } = useContext(CartContext);
   const history = useHistory();
+  const dispatch = useDispatch();
   const totalPrice = calculatePrice();
 
-  const handleCheckout = async () => {
+  const handleCheckout = () => {
+    dispatch(createOrder(cartItems, totalPrice));
     history.push({
       pathname: '/confirmation',
-      state: { cartItems, totalPrice },
+      state: { cartItems },
     });
+    clearCart();
   };
 
   const checkoutInfo = (
