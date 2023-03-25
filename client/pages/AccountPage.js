@@ -8,7 +8,7 @@ import Button from '../components/Button.js';
 const AccountPage = ({ handleClick, isLoggedIn, isAdmin, username }) => {
   return (
     <FullPageLayout xCentered>
-      <h1>Hello, {username}</h1>
+      <h1 className="text-center mb-6">Hello, {username}</h1>
 
       {isAdmin ? (
         <div>

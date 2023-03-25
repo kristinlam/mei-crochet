@@ -14,7 +14,7 @@ const PatternControlPage = () => {
 
   return (
     <FullPageLayout>
-      <h1>Pattern Dashboard</h1>
+      <h1 className="text-center mb-6">Pattern Dashboard</h1>
       {patterns.map((pattern) => (
         <Pattern key={pattern.id} pattern={pattern} />
       ))}

@@ -13,7 +13,7 @@ const UserControlPage = () => {
 
   return (
     <FullPageLayout>
-      <h1>User Dashboard</h1>
+      <h1 className="text-center mb-6">User Dashboard</h1>
       {users.map((user) => (
         <div key={user.id}>
           <p>ID: {user.id}</p>
