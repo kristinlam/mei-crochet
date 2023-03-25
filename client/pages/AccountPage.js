@@ -1,11 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../store';
 import FullPageLayout from '../layouts/FullPageLayout';
 import Button from '../components/Button.js';
 
-const AccountPage = ({ handleClick, isLoggedIn, isAdmin, username }) => {
+const AccountPage = () => {
+  const { isAdmin, username } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <FullPageLayout xCentered>
       <h1 className="text-center mb-6">Hello, {username}</h1>
@@ -24,7 +31,7 @@ const AccountPage = ({ handleClick, isLoggedIn, isAdmin, username }) => {
       )}
 
       <Button border>
-        <a href="/login" onClick={handleClick}>
+        <a href="/login" onClick={handleLogout}>
           Logout
         </a>
       </Button>
@@ -32,21 +39,4 @@ const AccountPage = ({ handleClick, isLoggedIn, isAdmin, username }) => {
   );
 };
 
-const mapState = (state) => {
-  console.log('state', state);
-  return {
-    isLoggedIn: !!state.auth.id,
-    isAdmin: state.auth.isAdmin,
-    username: state.auth.username,
-  };
-};
-
-const mapDispatch = (dispatch) => {
-  return {
-    handleClick() {
-      dispatch(logout());
-    },
-  };
-};
-
-export default connect(mapState, mapDispatch)(AccountPage);
+export default AccountPage;
