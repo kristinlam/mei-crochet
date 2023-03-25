@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { deletePattern } from '../../store/patterns';
 import Button from '../Button';
 
 const PatternEdit = ({ pattern, onSubmit }) => {
   const [editedPattern, setEditedPattern] = useState(pattern);
+  const dispatch = useDispatch();
 
-  const handleDelete = () => {
-    // WIP
-    console.log('PatternEdit: Delete clicked');
+  const handleDelete = (id) => {
+    dispatch(deletePattern(id));
   };
 
   const handleSubmit = (event) => {
@@ -94,7 +96,7 @@ const PatternEdit = ({ pattern, onSubmit }) => {
         <Button border>Save</Button>
       </form>
 
-      <Button border onClick={handleDelete}>
+      <Button border onClick={() => handleDelete(pattern.id)}>
         Delete
       </Button>
     </div>

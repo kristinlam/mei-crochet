@@ -41,7 +41,12 @@ export const createPattern = (pattern) => {
 
 export const deletePattern = (id) => {
   return async (dispatch) => {
-    const { data: pattern } = await axios.delete(`/api/patterns/${id}`);
+    const token = localStorage.getItem('token');
+    const { data: pattern } = await axios.delete(`/api/patterns/${id}`, {
+      headers: {
+        authorization: token,
+      },
+    });
     dispatch(_deletePattern(pattern));
   };
 };
