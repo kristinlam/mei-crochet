@@ -2,28 +2,28 @@ import axios from 'axios';
 
 const GET_PATTERNS = 'GET_PATTERNS';
 const CREATE_PATTERN = 'CREATE_PATTERN';
+const UPDATE_PATTERN = 'UPDATE_PATTERN';
 const DELETE_PATTERN = 'DELETE_PATTERN';
 
-const _getPatterns = (patterns) => {
-  return {
-    type: GET_PATTERNS,
-    patterns,
-  };
-};
+const _getPatterns = (patterns) => ({
+  type: GET_PATTERNS,
+  patterns,
+});
 
-const _createPattern = (pattern) => {
-  return {
-    type: CREATE_PATTERN,
-    pattern,
-  };
-};
+const _createPattern = (pattern) => ({
+  type: CREATE_PATTERN,
+  pattern,
+});
 
-const _deletePattern = (pattern) => {
-  return {
-    type: DELETE_PATTERN,
-    pattern,
-  };
-};
+const _updatePattern = (pattern) => ({
+  type: UPDATE_PATTERN,
+  pattern,
+});
+
+const _deletePattern = (pattern) => ({
+  type: DELETE_PATTERN,
+  pattern,
+});
 
 export const getPatterns = () => {
   return async (dispatch) => {
@@ -34,8 +34,21 @@ export const getPatterns = () => {
 
 export const createPattern = (pattern) => {
   return async (dispatch) => {
-    const { data: newPattern } = await axios.post('/api/patterns', pattern);
-    dispatch(_createPattern(newPattern));
+    const { data: pattern } = await axios.post('/api/patterns', pattern);
+    dispatch(_createPattern(pattern));
+  };
+};
+
+export const updatePattern = (pattern) => {
+  return async (dispatch) => {
+    const token = localStorage.getItem('token');
+
+    const { data } = await axios.put(`/api/patterns/${pattern.id}`, pattern, {
+      headers: {
+        authorization: token,
+      },
+    });
+    dispatch(_updatePattern(data));
   };
 };
 
@@ -57,6 +70,10 @@ export default function (state = [], action) {
       return action.patterns;
     case CREATE_PATTERN:
       return [...state, action.pattern];
+    case UPDATE_PATTERN:
+      return state.map((pattern) => {
+        return pattern.id === action.pattern.id ? action.pattern : pattern;
+      });
     case DELETE_PATTERN:
       return state.filter((pattern) => pattern.id !== action.pattern.id);
     default:

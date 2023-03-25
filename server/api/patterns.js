@@ -28,6 +28,7 @@ router.get('/:id', async (req, res, next) => {
 
 // Admin Routes
 // POST /api/patterns/
+// WIP: add authorization to header
 router.post('/', requireToken, isAdmin, async (req, res, next) => {
   try {
     res.status(201).json(await Pattern.create(req.body));
@@ -40,7 +41,7 @@ router.post('/', requireToken, isAdmin, async (req, res, next) => {
 router.put('/:id', requireToken, isAdmin, async (req, res, next) => {
   try {
     const pattern = await Pattern.findByPk(req.params.id);
-    res.json(await pattern.update(req.body));
+    res.status(200).json(await pattern.update(req.body));
   } catch (err) {
     next(err);
   }
@@ -51,7 +52,7 @@ router.delete('/:id', requireToken, isAdmin, async (req, res, next) => {
   try {
     const pattern = await Pattern.findByPk(req.params.id);
     await pattern.destroy();
-    res.json(pattern);
+    res.status(200).send(pattern);
   } catch (err) {
     next(err);
   }

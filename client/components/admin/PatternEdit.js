@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { deletePattern } from '../../store/patterns';
+import { updatePattern, deletePattern } from '../../store/patterns';
 import Button from '../Button';
 
 const PatternEdit = ({ pattern, onSubmit }) => {
@@ -14,8 +14,7 @@ const PatternEdit = ({ pattern, onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit();
-    // WIP
-    console.log('PatternEdit: Submit clicked');
+    dispatch(updatePattern(editedPattern));
   };
 
   return (
