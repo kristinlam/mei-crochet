@@ -27,22 +27,26 @@ const _deletePattern = (pattern) => ({
 
 export const getPatterns = () => {
   return async (dispatch) => {
-    const { data: patterns } = await axios.get('/api/patterns');
-    dispatch(_getPatterns(patterns));
+    const { data } = await axios.get('/api/patterns');
+    dispatch(_getPatterns(data));
   };
 };
 
 export const createPattern = (pattern) => {
   return async (dispatch) => {
-    const { data: pattern } = await axios.post('/api/patterns', pattern);
-    dispatch(_createPattern(pattern));
+    const token = localStorage.getItem('token');
+    const { data } = await axios.post('/api/patterns', pattern, {
+      headers: {
+        authorization: token,
+      },
+    });
+    dispatch(_createPattern(data));
   };
 };
 
 export const updatePattern = (pattern) => {
   return async (dispatch) => {
     const token = localStorage.getItem('token');
-
     const { data } = await axios.put(`/api/patterns/${pattern.id}`, pattern, {
       headers: {
         authorization: token,
@@ -55,12 +59,12 @@ export const updatePattern = (pattern) => {
 export const deletePattern = (id) => {
   return async (dispatch) => {
     const token = localStorage.getItem('token');
-    const { data: pattern } = await axios.delete(`/api/patterns/${id}`, {
+    const { data } = await axios.delete(`/api/patterns/${id}`, {
       headers: {
         authorization: token,
       },
     });
-    dispatch(_deletePattern(pattern));
+    dispatch(_deletePattern(data));
   };
 };
 

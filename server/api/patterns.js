@@ -10,7 +10,7 @@ module.exports = router;
 router.get('/', async (req, res, next) => {
   try {
     const patterns = await Pattern.findAll();
-    res.json(patterns);
+    res.status(200).json(patterns);
   } catch (err) {
     next(err);
   }
@@ -20,7 +20,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const pattern = await Pattern.findByPk(req.params.id);
-    res.json(pattern);
+    res.status(200).json(pattern);
   } catch (err) {
     next(err);
   }
@@ -28,7 +28,6 @@ router.get('/:id', async (req, res, next) => {
 
 // Admin Routes
 // POST /api/patterns/
-// WIP: add authorization to header
 router.post('/', requireToken, isAdmin, async (req, res, next) => {
   try {
     res.status(201).json(await Pattern.create(req.body));
