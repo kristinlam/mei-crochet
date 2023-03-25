@@ -428,6 +428,8 @@ h1 {
   font-size: 3.75rem;
   line-height: 1;
   font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(233 91 11 / var(--tw-text-opacity));
 }
 
 h2 {

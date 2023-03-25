@@ -12,7 +12,7 @@
   }
 
   h1 {
-    @apply font-bold font-serif text-6xl;
+    @apply font-bold font-serif text-6xl text-orange;
   }
 
   h2 {
