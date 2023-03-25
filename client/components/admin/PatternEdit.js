@@ -21,76 +21,83 @@ const PatternEdit = ({ pattern, onSubmit }) => {
     <div>
       <p>ID: {pattern.id}</p>
       <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input
-          type="text"
-          value={editedPattern.name}
-          onChange={(event) =>
-            setEditedPattern({
-              ...editedPattern,
-              name: event.target.value,
-            })
-          }
-        />
-
-        <label>Creator</label>
-        <input
-          type="text"
-          value={editedPattern.creator}
-          onChange={(event) =>
-            setEditedPattern({
-              ...editedPattern,
-              creator: event.target.value,
-            })
-          }
-        />
-
-        <label>Description</label>
-        <textarea
-          value={editedPattern.description}
-          onChange={(event) =>
-            setEditedPattern({
-              ...editedPattern,
-              description: event.target.value,
-            })
-          }
-        />
-
-        <label>Price</label>
-        <input
-          type="number"
-          value={editedPattern.price}
-          onChange={(event) =>
-            setEditedPattern({
-              ...editedPattern,
-              price: event.target.value,
-            })
-          }
-        />
-
-        <label>Image</label>
-        <input
-          type="text"
-          value={editedPattern.image}
-          onChange={(event) =>
-            setEditedPattern({
-              ...editedPattern,
-              image: event.target.value,
-            })
-          }
-        />
-
-        <label>Link</label>
-        <input
-          type="text"
-          value={editedPattern.link}
-          onChange={(event) =>
-            setEditedPattern({
-              ...editedPattern,
-              link: event.target.value,
-            })
-          }
-        />
+        <div>
+          <label>Name</label>
+          <input
+            type="text"
+            value={editedPattern.name}
+            onChange={(event) =>
+              setEditedPattern({
+                ...editedPattern,
+                name: event.target.value,
+              })
+            }
+          />
+        </div>
+        <div>
+          <label>Creator</label>
+          <input
+            type="text"
+            value={editedPattern.creator}
+            onChange={(event) =>
+              setEditedPattern({
+                ...editedPattern,
+                creator: event.target.value,
+              })
+            }
+          />
+        </div>
+        <div>
+          <label>Description</label>
+          <textarea
+            value={editedPattern.description}
+            onChange={(event) =>
+              setEditedPattern({
+                ...editedPattern,
+                description: event.target.value,
+              })
+            }
+          />
+        </div>
+        <div>
+          <label>Price</label>
+          <input
+            type="number"
+            value={editedPattern.price}
+            onChange={(event) =>
+              setEditedPattern({
+                ...editedPattern,
+                price: event.target.value,
+              })
+            }
+          />
+        </div>
+        <div>
+          <label>Image</label>
+          <input
+            type="text"
+            value={editedPattern.image}
+            onChange={(event) =>
+              setEditedPattern({
+                ...editedPattern,
+                image: event.target.value,
+              })
+            }
+          />
+        </div>
+        <div>
+          <label>Link</label>
+          <input
+            type="text"
+            value={editedPattern.link}
+            onChange={(event) =>
+              setEditedPattern({
+                ...editedPattern,
+                link: event.target.value,
+              })
+            }
+          />
+        </div>
 
         <Button border>Save</Button>
       </form>

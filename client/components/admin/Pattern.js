@@ -14,7 +14,7 @@ const Pattern = ({ pattern }) => {
   };
 
   return (
-    <div>
+    <div className="mb-8">
       {showEdit ? (
         <div>
           <PatternEdit pattern={pattern} onSubmit={handleSubmit} />
@@ -24,7 +24,7 @@ const Pattern = ({ pattern }) => {
         </div>
       ) : (
         <div>
-          <div>
+          <div className="mb-4">
             <p>ID: {pattern.id}</p>
             <p>Name: {pattern.name}</p>
             <p>Creator: {pattern.creator}</p>
