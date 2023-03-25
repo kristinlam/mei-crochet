@@ -4,7 +4,6 @@ import classNames from 'classnames';
 const FullPageLayout = ({
   children,
   backgroundColor,
-  textColor,
   xCentered,
   productPage,
   cartPage,
@@ -25,7 +24,6 @@ const FullPageLayout = ({
       'max-w-5xl sm:px-14': cartPage,
       'max-w-7xl': !cartPage && !productPage,
     },
-    textColor,
     className
   );
 

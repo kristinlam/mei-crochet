@@ -29,14 +29,14 @@ const SinglePatternPage = (props) => {
       </div>
 
       <div className="lg:flex-1 lg:px-12 mt-10">
-        <div className="flex items-start text-orange mb-2">
+        <div className="flex items-start mb-2">
           <div className="flex-grow pr-8 sm:pr-12 lg:pr-10">
             <h1 className="text-4xl leading-snug font-bold font-serif">
               {pattern.name}
             </h1>
           </div>
           <div>
-            <p className="text-4xl leading-snug font-bold font-serif">
+            <p className="text-4xl text-orange leading-snug font-bold font-serif">
               {convertCents(pattern.price)}
             </p>
           </div>

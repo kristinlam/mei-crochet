@@ -57,7 +57,7 @@ const CartPage = () => {
 
   return (
     <FullPageLayout cartPage>
-      <h1 className="text-orange text-center mb-6">Your Cart</h1>
+      <h1 className="text-center mb-6">Your Cart</h1>
       {displayCartOrMsg}
     </FullPageLayout>
   );
