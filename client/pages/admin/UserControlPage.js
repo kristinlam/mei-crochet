@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { getUsers } from '../../store/users';
 import FullPageLayout from '../../layouts/FullPageLayout';
 
