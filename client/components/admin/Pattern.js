@@ -16,7 +16,12 @@ const Pattern = ({ pattern }) => {
   return (
     <div>
       {showEdit ? (
-        <PatternEdit pattern={pattern} onSubmit={handleSubmit} />
+        <div>
+          <PatternEdit pattern={pattern} onSubmit={handleSubmit} />
+          <Button border onClick={handleEdit}>
+            Cancel
+          </Button>
+        </div>
       ) : (
         <div>
           <div>
