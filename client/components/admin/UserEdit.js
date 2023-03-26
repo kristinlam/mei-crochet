@@ -14,7 +14,7 @@ const UserEdit = ({ user, onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit();
-    console.log('handle submit');
+    dispatch(updateUser(editedUser));
   };
 
   return (

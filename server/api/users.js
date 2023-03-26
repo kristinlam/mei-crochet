@@ -11,7 +11,7 @@ module.exports = router;
 router.get('/', requireToken, isAdmin, async (req, res, next) => {
   try {
     const users = await User.findAll({
-      attributes: ['id', 'username', 'isAdmin'], // attributes that are sent back
+      attributes: ['id', 'username', 'isAdmin'],
     });
     res.status(200).json(users);
   } catch (err) {
@@ -20,7 +20,7 @@ router.get('/', requireToken, isAdmin, async (req, res, next) => {
 });
 
 // PUT /api/users/:id
-router.put(':/id', requireToken, isAdmin, async (req, res, next) => {
+router.put('/:id', requireToken, isAdmin, async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.id);
     res.status(200).json(await user.update(req.body));
