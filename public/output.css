@@ -615,6 +615,20 @@ h2 {
   position: relative;
 }
 
+.inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.inset-40 {
+  top: 10rem;
+  right: 10rem;
+  bottom: 10rem;
+  left: 10rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -737,6 +751,10 @@ h2 {
   height: 60vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .min-h-\[calc\(100vh-4rem\)\] {
   min-height: calc(100vh - 4rem);
 }
@@ -845,6 +863,10 @@ h2 {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -874,6 +896,10 @@ h2 {
 
 .self-start {
   align-self: flex-start;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-x-hidden {
@@ -945,6 +971,11 @@ h2 {
   background-color: rgb(147 3 46 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(244 222 145 / var(--tw-bg-opacity));
@@ -965,6 +996,10 @@ h2 {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .p-2 {
@@ -1122,6 +1157,10 @@ h2 {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .outline {

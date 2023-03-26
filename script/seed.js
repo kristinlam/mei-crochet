@@ -7,11 +7,19 @@ const {
 
 const users = [
   { username: 'a', password: 'a', isAdmin: true },
-  { username: 'u', password: 'u' },
+  { username: 'b', password: 'b', isAdmin: true },
+  { username: 'c', password: 'c', isAdmin: true },
+  { username: 'd', password: 'd' },
+  { username: 'e', password: 'e' },
+  { username: 'f', password: 'f' },
+  { username: 'g', password: 'g' },
+  { username: 'h', password: 'h' },
 ];
 
 const orders = [
   { isFulfilled: true, totalCost: 2500 },
+  { isFulfilled: true, totalCost: 4000 },
+  { isFulfilled: false, totalCost: 0 },
   { isFulfilled: false, totalCost: 0 },
 ];
 

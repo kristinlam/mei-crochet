@@ -1,17 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
 import auth from './auth';
+import users from './users';
 import patterns from './patterns';
 import singlePattern from './singlePattern';
-import users from './users';
+import orders from './orders';
 import singleOrder from './singleOrder';
 
 // configureStore auto calls combineReducers
 const reducer = {
   auth,
+  users,
   patterns,
   singlePattern,
-  users,
+  orders,
   singleOrder,
 };
 
