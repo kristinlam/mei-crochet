@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPattern } from '../../store/patterns';
 import Button from '../Button';
+import Modal from '../Modal';
 
 const PatternCreate = () => {
   const initialPattern = {
@@ -18,12 +19,24 @@ const PatternCreate = () => {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = (event, pattern) => {
+  const handleSubmit = async (event, pattern) => {
     event.preventDefault();
     dispatch(createPattern(pattern));
     setNewPattern(initialPattern);
     setShowModal(true);
   };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
+  const actionBar = (
+    <div>
+      <Button border onClick={() => setShowModal(false)}>
+        OK
+      </Button>
+    </div>
+  );
 
   return (
     <form onSubmit={(event) => handleSubmit(event, newPattern)}>
@@ -107,12 +120,9 @@ const PatternCreate = () => {
 
       <Button border>Add</Button>
       {showModal && (
-        <div>
-          <div>
-            <p>Pattern created successfully.</p>
-            <button onClick={() => setShowModal(false)}>OK</button>
-          </div>
-        </div>
+        <Modal onClose={handleClose} actionBar={actionBar}>
+          <p>Pattern created successfully.</p>
+        </Modal>
       )}
     </form>
   );
