@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { updateUser, deleteUser } from '../../store/users';
 import Button from '../Button';
 
 const UserEdit = ({ user, onSubmit }) => {
@@ -7,7 +8,7 @@ const UserEdit = ({ user, onSubmit }) => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    console.log('handle delete');
+    dispatch(deleteUser(id));
   };
 
   const handleSubmit = (event) => {
@@ -71,7 +72,7 @@ const UserEdit = ({ user, onSubmit }) => {
         </div>
         <Button border>Save</Button>
       </form>
-      <Button border onClick={() => handleDelete(pattern.id)}>
+      <Button border onClick={() => handleDelete(user.id)}>
         Delete
       </Button>
     </div>

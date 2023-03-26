@@ -40,12 +40,12 @@ export const updateUser = (user) => async (dispatch) => {
 
 export const deleteUser = (id) => async (dispatch) => {
   const token = localStorage.getItem(TOKEN);
-  const { data } = await axios.delete(`/api/patterns/${id}`, {
+  const { data } = await axios.delete(`/api/users/${id}`, {
     headers: {
       authorization: token,
     },
   });
-  dispatch(_deletePattern(data));
+  dispatch(_deleteUser(data));
 };
 
 export default function (state = [], action) {
