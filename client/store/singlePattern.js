@@ -2,18 +2,14 @@ import axios from 'axios';
 
 const GET_SINGLE_PATTERN = 'GET_SINGLE_PATTERN';
 
-const _getSinglePattern = (pattern) => {
-  return {
-    type: GET_SINGLE_PATTERN,
-    pattern,
-  };
-};
+const _getSinglePattern = (pattern) => ({
+  type: GET_SINGLE_PATTERN,
+  pattern,
+});
 
-export const getSinglePattern = (id) => {
-  return async (dispatch) => {
-    const { data: pattern } = await axios.get(`/api/patterns/${id}`);
-    dispatch(_getSinglePattern(pattern));
-  };
+export const getSinglePattern = (id) => async (dispatch) => {
+  const { data: pattern } = await axios.get(`/api/patterns/${id}`);
+  dispatch(_getSinglePattern(pattern));
 };
 
 export default function (state = {}, action) {

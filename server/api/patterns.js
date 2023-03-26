@@ -51,7 +51,7 @@ router.delete('/:id', requireToken, isAdmin, async (req, res, next) => {
   try {
     const pattern = await Pattern.findByPk(req.params.id);
     await pattern.destroy();
-    res.status(200).send(pattern);
+    res.status(200).json(pattern);
   } catch (err) {
     next(err);
   }
