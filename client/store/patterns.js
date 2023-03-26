@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+const TOKEN = 'token';
 const GET_PATTERNS = 'GET_PATTERNS';
 const CREATE_PATTERN = 'CREATE_PATTERN';
 const UPDATE_PATTERN = 'UPDATE_PATTERN';
@@ -25,47 +26,39 @@ const _deletePattern = (pattern) => ({
   pattern,
 });
 
-export const getPatterns = () => {
-  return async (dispatch) => {
-    const { data } = await axios.get('/api/patterns');
-    dispatch(_getPatterns(data));
-  };
+export const getPatterns = () => async (dispatch) => {
+  const { data } = await axios.get('/api/patterns');
+  dispatch(_getPatterns(data));
 };
 
-export const createPattern = (pattern) => {
-  return async (dispatch) => {
-    const token = localStorage.getItem('token');
-    const { data } = await axios.post('/api/patterns', pattern, {
-      headers: {
-        authorization: token,
-      },
-    });
-    dispatch(_createPattern(data));
-  };
+export const createPattern = (pattern) => async (dispatch) => {
+  const token = localStorage.getItem(TOKEN);
+  const { data } = await axios.post('/api/patterns', pattern, {
+    headers: {
+      authorization: token,
+    },
+  });
+  dispatch(_createPattern(data));
 };
 
-export const updatePattern = (pattern) => {
-  return async (dispatch) => {
-    const token = localStorage.getItem('token');
-    const { data } = await axios.put(`/api/patterns/${pattern.id}`, pattern, {
-      headers: {
-        authorization: token,
-      },
-    });
-    dispatch(_updatePattern(data));
-  };
+export const updatePattern = (pattern) => async (dispatch) => {
+  const token = localStorage.getItem(TOKEN);
+  const { data } = await axios.put(`/api/patterns/${pattern.id}`, pattern, {
+    headers: {
+      authorization: token,
+    },
+  });
+  dispatch(_updatePattern(data));
 };
 
-export const deletePattern = (id) => {
-  return async (dispatch) => {
-    const token = localStorage.getItem('token');
-    const { data } = await axios.delete(`/api/patterns/${id}`, {
-      headers: {
-        authorization: token,
-      },
-    });
-    dispatch(_deletePattern(data));
-  };
+export const deletePattern = (id) => async (dispatch) => {
+  const token = localStorage.getItem(TOKEN);
+  const { data } = await axios.delete(`/api/patterns/${id}`, {
+    headers: {
+      authorization: token,
+    },
+  });
+  dispatch(_deletePattern(data));
 };
 
 export default function (state = [], action) {
