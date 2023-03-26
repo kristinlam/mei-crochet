@@ -15,11 +15,6 @@ const UserControlPage = () => {
   return (
     <FullPageLayout>
       <h1 className="text-center mb-8">User Dashboard</h1>
-      <div className="mb-8">
-        <h2>Create</h2>
-        <p>User Create component here</p>
-      </div>
-
       <div>
         <h2>Update</h2>
         {users.map((user) => (
