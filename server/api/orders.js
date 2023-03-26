@@ -1,23 +1,38 @@
 const router = require('express').Router();
 const {
-  models: { Order, OrderPattern },
+  models: { Order, User },
 } = require('../db');
 const { requireToken, isAdmin } = require('./middleware');
 
 module.exports = router;
 
-// GET /api/orders
-router.get('/', requireToken, isAdmin, async (req, res, next) => {
+// User routes
+// GET /api/orders/
+// Get all orders associated with user
+router.get('/', requireToken, async (req, res, next) => {
   try {
-    const orders = await Order.findAll();
+    const user = await User.findByToken(req.headers.authorization);
+    const orders = await Order.findAll({
+      where: {
+        userId: user.id,
+      },
+    });
     res.status(200).json(orders);
   } catch (err) {
     next(err);
   }
 });
 
+// PUT /api/orders/
+// user: when user checks out, find cart that has isFulfilled:false and update to true.
+// add authorization to header
+
+// PUT /api/orders/:patternId
+// user: when user adds a pattern to cart, findOrCreate cart associated with user that has isFulfilled: false. Add item.
+// add authorization to header
+
+// Guest route
 // POST /api/orders
-// guest: checkout
 router.post('/', async (req, res, next) => {
   try {
     // create Order instance for guest
@@ -36,9 +51,3 @@ router.post('/', async (req, res, next) => {
     next(err);
   }
 });
-
-// PUT /api/orders
-// user: when user checks out, find cart thatt has isFulfilled:false and update to true.
-
-// PUT /api/orders/:patternId
-// user: when user adds a pattern to cart, findOrCreate cart associated with user that has isFulfilled: false. Add item.
